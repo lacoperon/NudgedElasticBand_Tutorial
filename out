@@ -51,3 +51,168 @@ PS:
 
 Read file <err> for stderr output of this job.
 
+Sender: OpenLava System <openlava@n34>
+Subject: Job 934137: <GPU_NudgedElasticBand_ExampleAnneal> Done
+
+Job <GPU_NudgedElasticBand_ExampleAnneal> was submitted from host <cottontail> by user <ejwilliams>.
+Job was executed on host(s) <4*n34>, in queue <mwgpu>, as user <ejwilliams>.
+</home33/ejwilliams> was used as the home directory.
+</home33/ejwilliams/NEB_Tutorial/Implementation> was used as the working directory.
+Started at Tue Jul 24 18:01:49 2018
+Results reported at Tue Jul 24 21:39:05 2018
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/bash 
+#####PTT INITIALIZATION VARIABLES### 
+#BSUB -q mwgpu 
+#BSUB -n 4 
+#BSUB -J GPU_NudgedElasticBand_ExampleAnneal
+#BSUB -o out 
+#BSUB -e err
+
+
+cd 3ANNEAL/
+mpirun -np 32 $AMBERHOME/bin/sander.MPI -ng 32 -groupfile groupfile 
+
+
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time   : 386945.19 sec.
+    Max Memory :       944 MB
+    Max Swap   :     11224 MB
+
+    Max Processes  :        36
+
+The output (if any) follows:
+
+
+ Running multisander version of sander Amber12
+    Total processors =    32
+    Number of groups =    32
+ 
+
+
+PS:
+
+Read file <err> for stderr output of this job.
+
+Sender: OpenLava System <openlava@n36>
+Subject: Job 934213: <GPU_NudgedElasticBand_Example> Exited
+
+Job <GPU_NudgedElasticBand_Example> was submitted from host <cottontail> by user <ejwilliams>.
+Job was executed on host(s) <4*n36>, in queue <mwgpu>, as user <ejwilliams>.
+</home33/ejwilliams> was used as the home directory.
+</home33/ejwilliams/NEB_Tutorial/Implementation> was used as the working directory.
+Started at Tue Jul 24 23:56:41 2018
+Results reported at Tue Jul 24 23:56:47 2018
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/bash 
+#####PTT INITIALIZATION VARIABLES### 
+#BSUB -q mwgpu 
+#BSUB -n 4 
+#BSUB -J GPU_NudgedElasticBand_Example
+#BSUB -o out 
+#BSUB -e err
+
+
+cd 4COOL/
+mpirun -np 32 $AMBERHOME/bin/sander.MPI -ng 32 -groupfile groupfile 
+
+
+
+------------------------------------------------------------
+
+Exited with exit code 1.
+
+Resource usage summary:
+
+    CPU time   :      3.00 sec.
+    Max Memory :         9 MB
+    Max Swap   :       241 MB
+
+    Max Processes  :         2
+
+The output (if any) follows:
+
+
+  Error opening unit   15: File "groupfile" is missing or unreadable                
+
+  Error opening unit   15: File "groupfile" is missing or unreadable                
+
+  Error opening unit   15: File "groupfile" is missing or unreadable                
+
+  Error opening unit   15: File "groupfile" is missing or unreadable                
+
+  Error opening unit   15: File "groupfile" is missing or unreadable                
+
+  Error opening unit   15: File "groupfile" is missing or unreadable                
+
+  Error opening unit   15: File "groupfile" is missing or unreadable                
+
+  Error opening unit   15: File "groupfile" is missing or unreadable                
+
+  Error opening unit   15: File "groupfile" is missing or unreadable                
+
+  Error opening unit   15: File "groupfile" is missing or unreadable                
+
+  Error opening unit   15: File "groupfile" is missing or unreadable                
+
+  Error opening unit   15: File "groupfile" is missing or unreadable                
+
+  Error opening unit   15: File "groupfile" is missing or unreadable                
+
+  Error opening unit   15: File "groupfile" is missing or unreadable                
+
+  Error opening unit   15: File "groupfile" is missing or unreadable                
+
+  Error opening unit   15: File "groupfile" is missing or unreadable                
+
+  Error opening unit   15: File "groupfile" is missing or unreadable                
+
+  Error opening unit   15: File "groupfile" is missing or unreadable                
+
+  Error opening unit   15: File "groupfile" is missing or unreadable                
+
+  Error opening unit   15: File "groupfile" is missing or unreadable                
+
+  Error opening unit   15: File "groupfile" is missing or unreadable                
+
+  Error opening unit   15: File "groupfile" is missing or unreadable                
+
+  Error opening unit   15: File "groupfile" is missing or unreadable                
+
+  Error opening unit   15: File "groupfile" is missing or unreadable                
+
+  Error opening unit   15: File "groupfile" is missing or unreadable                
+
+  Error opening unit   15: File "groupfile" is missing or unreadable                
+
+  Error opening unit   15: File "groupfile" is missing or unreadable                
+
+  Error opening unit   15: File "groupfile" is missing or unreadable                
+
+  Error opening unit   15: File "groupfile" is missing or unreadable                
+
+  Error opening unit   15: File "groupfile" is missing or unreadable                
+
+  Error opening unit   15: File "groupfile" is missing or unreadable                
+
+  Error opening unit   15: File "groupfile" is missing or unreadable                
+
+
+PS:
+
+Read file <err> for stderr output of this job.
+
