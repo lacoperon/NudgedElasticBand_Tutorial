@@ -1,0 +1,3865 @@
+
+          -------------------------------------------------------
+          Amber 12 SANDER                              2012
+          -------------------------------------------------------
+
+| Run on 07/24/2018 at 16:54:16
+  [-O]verwriting output
+
+File Assignments:
+|  MDIN: ./1heat.in                                                            
+| MDOUT: ./neb.out.002                                                         
+|INPCRD: ../str1.inpcrd                                                        
+|  PARM: ../ALA_dipeptide.prmtop                                               
+|RESTRT: ./neb.r.002                                                           
+|  REFC: refc                                                                  
+| MDVEL: mdvel.002                                                             
+|  MDEN: mden.002                                                              
+| MDCRD: ./neb.x.002                                                           
+|MDINFO: ./neb.info.002                                                        
+|  MTMD: mtmd                                                                  
+|INPDIP: inpdip                                                                
+|RSTDIP: rstdip                                                                
+
+|INPTRA: inptraj                                                               
+|
+ 
+ Here is the input file:
+ 
+Alanine NEB initial MD with small K                                            
+&cntrl                                                                         
+   imin = 0, irest = 0,                                                        
+   ntc=1, ntf=1,                                                               
+   ntpr=500, ntwx=500,                                                         
+   ntb = 0, cut = 999.0, rgbmax=999.0,                                         
+   igb = 1, saltcon=0.2,                                                       
+   nstlim = 40000, nscm=0,                                                     
+   dt = 0.0005, ig=-1,                                                         
+   ntt = 3, gamma_ln=1000.0,                                                   
+   tempi=0.0, temp0=300.0,                                                     
+   tgtfitmask=":1,2,3",                                                        
+   tgtrmsmask=":1,2,3@N,CA,C",                                                 
+   ineb = 1,skmin = 10,skmax = 10,                                             
+   nmropt=1,                                                                   
+/                                                                              
+&wt type='TEMP0', istep1=0,istep2=35000,                                       
+    value1=0.0, value2=300.0                                                   
+/                                                                              
+&wt type='END'                                                                 
+/                                                                              
+
+--------------------------------------------------------------------------------
+   1.  RESOURCE   USE: 
+--------------------------------------------------------------------------------
+
+| Flags: MPI                                                                    
+| New format PARM file being parsed.
+| Version =    1.000 Date = 07/24/18 Time = 12:37:35
+ NATOM  =      22 NTYPES =       7 NBONH =      12 MBONA  =       9
+ NTHETH =      25 MTHETA =      11 NPHIH =      43 MPHIA  =      24
+ NHPARM =       0 NPARM  =       0 NNB   =      99 NRES   =       3
+ NBONA  =       9 NTHETA =      11 NPHIA =      24 NUMBND =      11
+ NUMANG =      21 NPTRA  =      20 NATYP =       8 NPHB   =       0
+ IFBOX  =       0 NMXRS  =      10 IFCAP =       0 NEXTRA =       0
+ NCOPY  =       0
+
+ Implicit solvent radii are modified Bondi radii (mbondi)                                                   
+
+|     Memory Use     Allocated
+|     Real                1528
+|     Hollerith             71
+|     Integer            21101
+|     Max Pairs              1
+|     nblistReal             0
+|     nblist Int             0
+|       Total               94 kbytes
+
+| Note: 1-4 EEL scale factors are being read from the topology file.
+
+| Note: 1-4 VDW scale factors are being read from the topology file.
+| Duplicated    0 dihedrals
+| Duplicated    0 dihedrals
+Note: ig = -1. Setting random seed based on wallclock time in microseconds
+      and disabling the synchronization of random numbers between tasks
+      to improve performance.
+
+--------------------------------------------------------------------------------
+   2.  CONTROL  DATA  FOR  THE  RUN
+--------------------------------------------------------------------------------
+
+default_name                                                                    
+
+General flags:
+     imin    =       0, nmropt  =       1
+
+Nature and format of input:
+     ntx     =       1, irest   =       0, ntrx    =       1
+
+Nature and format of output:
+     ntxo    =       1, ntpr    =     500, ntrx    =       1, ntwr    =     500
+     iwrap   =       0, ntwx    =     500, ntwv    =       0, ntwe    =       0
+     ioutfm  =       0, ntwprt  =       0, idecomp =       0, rbornstat=      0
+
+Potential function:
+     ntf     =       1, ntb     =       0, igb     =       1, nsnb    =      25
+     ipol    =       0, gbsa    =       0, iesp    =       0
+     dielc   =   1.00000, cut     = 999.00000, intdiel =   1.00000
+     saltcon =   0.20000, offset  =   0.09000, gbalpha=    1.00000
+     gbbeta  =   0.00000, gbgamma =   0.00000, surften =   0.00500
+     rdt     =   0.00000, rgbmax  = 999.00000  extdiel =  78.50000
+     alpb  =        0
+
+Frozen or restrained atoms:
+     ibelly  =       0, ntr     =       0
+
+Molecular dynamics:
+     nstlim  =     40000, nscm    =         0, nrespa  =         1
+     t       =   0.00000, dt      =   0.00050, vlimit  =  20.00000
+
+Langevin dynamics temperature regulation:
+     ig      =  600789
+     temp0   = 300.00000, tempi   =   0.00000, gamma_ln=1000.00000
+
+NMR refinement options:
+     iscale  =       0, noeskp  =       1, ipnlty  =       1, mxsub   =       1
+     scalm   = 100.00000, pencut  =   0.10000, tausw   =   0.10000
+
+| MPI Timing options:
+|      profile_mpi =        0
+The following selection will be used for NEB structure fitting
+     Mask ":1,2,3" matches    22 atoms
+The following selection will be used for NEB force application
+     Mask ":1,2,3@N,CA,C" matches     5 atoms
+
+  Last atom in NEB fitmask or rmsmask is     22
+|  INFO: Old style inpcrd file read
+
+
+--------------------------------------------------------------------------------
+   3.  ATOMIC COORDINATES AND VELOCITIES
+--------------------------------------------------------------------------------
+
+default_name                                                                    
+ begin time read from input coords =     0.000 ps
+
+
+
+           Begin reading energy term weight changes/NMR restraints
+ WEIGHT CHANGES:
+ TEMP0         0  35000    0.000000  300.000000      0      0
+
+ RESTRAINTS:
+                          ** No restraint defined **
+
+                  Done reading weight changes/NMR restraints
+
+
+ Number of triangulated 3-point waters found:        0
+|  Atom division among processors:
+|         0      22
+|  Running AMBER/MPI version on    1 nodes
+
+|  MULTISANDER:   32 groups.    1 processors out of   32 total.
+
+--------------------------------------------------------------------------------
+   4.  RESULTS
+--------------------------------------------------------------------------------
+
+|  # of SOLUTE  degrees of freedom (RNDFP):      66.
+|  # of SOLVENT degrees of freedom (RNDFS):       0.
+|  NDFMIN =      66.     NUM_NOSHAKE =      0     CORRECTED RNDFP =      66.
+|  TOTAL # of degrees of freedom (RNDF) =      66.
+
+ NSTEP =        0   TIME(PS) =       0.000  TEMP(K) =     0.00  PRESS =     0.0
+ Etot   =       -36.0245  EKtot   =         0.0000  EPtot      =       -36.0245
+ BOND   =         0.4957  ANGLE   =         1.2919  DIHED      =         8.9349
+ 1-4 NB =         3.0084  1-4 EEL =        45.0565  VDWAALS    =        -1.8571
+ EELEC  =       -75.3077  EGB     =       -17.6469  RESTRAINT  =         0.0000
+NEB replicate breakdown:
+Energy for replicate   1 =      -36.0245
+Energy for replicate   2 =      -36.0245
+Energy for replicate   3 =      -36.0245
+Energy for replicate   4 =      -36.0245
+Energy for replicate   5 =      -36.0245
+Energy for replicate   6 =      -36.0245
+Energy for replicate   7 =      -36.0245
+Energy for replicate   8 =      -36.0245
+Energy for replicate   9 =      -36.0245
+Energy for replicate  10 =      -36.0245
+Energy for replicate  11 =      -36.0245
+Energy for replicate  12 =      -36.0245
+Energy for replicate  13 =      -36.0245
+Energy for replicate  14 =      -36.0245
+Energy for replicate  15 =      -36.0245
+Energy for replicate  16 =      -36.0245
+Energy for replicate  17 =      -34.1978
+Energy for replicate  18 =      -34.1978
+Energy for replicate  19 =      -34.1978
+Energy for replicate  20 =      -34.1978
+Energy for replicate  21 =      -34.1978
+Energy for replicate  22 =      -34.1978
+Energy for replicate  23 =      -34.1978
+Energy for replicate  24 =      -34.1978
+Energy for replicate  25 =      -34.1978
+Energy for replicate  26 =      -34.1978
+Energy for replicate  27 =      -34.1978
+Energy for replicate  28 =      -34.1978
+Energy for replicate  29 =      -34.1978
+Energy for replicate  30 =      -34.1978
+Energy for replicate  31 =      -34.1978
+Energy for replicate  32 =      -34.1978
+Total Energy of replicates =    -1123.5571
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+ NSTEP =      500   TIME(PS) =       0.250  TEMP(K) =     3.97  PRESS =     0.0
+ Etot   =       -35.6236  EKtot   =         0.2606  EPtot      =       -35.8843
+ BOND   =         0.5407  ANGLE   =         1.5583  DIHED      =         8.9142
+ 1-4 NB =         2.9918  1-4 EEL =        44.8751  VDWAALS    =        -1.8401
+ EELEC  =       -75.2402  EGB     =       -17.6841  RESTRAINT  =         0.0000
+NEB replicate breakdown:
+Energy for replicate   1 =      -36.0245
+Energy for replicate   2 =      -35.8553
+Energy for replicate   3 =      -35.8843
+Energy for replicate   4 =      -35.7520
+Energy for replicate   5 =      -35.8807
+Energy for replicate   6 =      -35.9098
+Energy for replicate   7 =      -35.8734
+Energy for replicate   8 =      -35.8219
+Energy for replicate   9 =      -35.9126
+Energy for replicate  10 =      -35.8693
+Energy for replicate  11 =      -35.8436
+Energy for replicate  12 =      -35.9257
+Energy for replicate  13 =      -35.8860
+Energy for replicate  14 =      -35.9003
+Energy for replicate  15 =      -35.8331
+Energy for replicate  16 =      -35.5487
+Energy for replicate  17 =      -33.8213
+Energy for replicate  18 =      -34.1741
+Energy for replicate  19 =      -34.2371
+Energy for replicate  20 =      -34.2528
+Energy for replicate  21 =      -34.2546
+Energy for replicate  22 =      -34.3166
+Energy for replicate  23 =      -34.1843
+Energy for replicate  24 =      -34.1748
+Energy for replicate  25 =      -34.3155
+Energy for replicate  26 =      -34.3627
+Energy for replicate  27 =      -34.2785
+Energy for replicate  28 =      -34.2932
+Energy for replicate  29 =      -34.2931
+Energy for replicate  30 =      -34.3036
+Energy for replicate  31 =      -34.1661
+Energy for replicate  32 =      -34.1978
+Total Energy of replicates =    -1121.3470
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+ NSTEP =     1000   TIME(PS) =       0.500  TEMP(K) =     8.28  PRESS =     0.0
+ Etot   =       -35.2170  EKtot   =         0.5430  EPtot      =       -35.7600
+ BOND   =         0.6774  ANGLE   =         1.5329  DIHED      =         8.9299
+ 1-4 NB =         2.9659  1-4 EEL =        44.8958  VDWAALS    =        -1.8958
+ EELEC  =       -75.1348  EGB     =       -17.7314  RESTRAINT  =         0.0000
+NEB replicate breakdown:
+Energy for replicate   1 =      -36.0245
+Energy for replicate   2 =      -35.7464
+Energy for replicate   3 =      -35.7600
+Energy for replicate   4 =      -35.7389
+Energy for replicate   5 =      -35.5874
+Energy for replicate   6 =      -35.5886
+Energy for replicate   7 =      -35.7319
+Energy for replicate   8 =      -35.8139
+Energy for replicate   9 =      -35.8117
+Energy for replicate  10 =      -35.7019
+Energy for replicate  11 =      -35.4449
+Energy for replicate  12 =      -35.4665
+Energy for replicate  13 =      -35.6014
+Energy for replicate  14 =      -35.4557
+Energy for replicate  15 =      -35.5679
+Energy for replicate  16 =      -34.4190
+Energy for replicate  17 =      -33.1153
+Energy for replicate  18 =      -34.1483
+Energy for replicate  19 =      -33.9850
+Energy for replicate  20 =      -34.1440
+Energy for replicate  21 =      -34.0885
+Energy for replicate  22 =      -34.0665
+Energy for replicate  23 =      -34.2433
+Energy for replicate  24 =      -34.1131
+Energy for replicate  25 =      -34.0105
+Energy for replicate  26 =      -34.1595
+Energy for replicate  27 =      -34.1874
+Energy for replicate  28 =      -34.0307
+Energy for replicate  29 =      -33.7535
+Energy for replicate  30 =      -34.0286
+Energy for replicate  31 =      -33.8913
+Energy for replicate  32 =      -34.1978
+Total Energy of replicates =    -1113.6238
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+ NSTEP =     1500   TIME(PS) =       0.750  TEMP(K) =    12.24  PRESS =     0.0
+ Etot   =       -34.5026  EKtot   =         0.8029  EPtot      =       -35.3055
+ BOND   =         0.8431  ANGLE   =         1.7897  DIHED      =         8.9207
+ 1-4 NB =         2.8933  1-4 EEL =        45.0421  VDWAALS    =        -1.9219
+ EELEC  =       -75.0860  EGB     =       -17.7866  RESTRAINT  =         0.0000
+NEB replicate breakdown:
+Energy for replicate   1 =      -36.0245
+Energy for replicate   2 =      -35.3421
+Energy for replicate   3 =      -35.3055
+Energy for replicate   4 =      -35.2095
+Energy for replicate   5 =      -35.4851
+Energy for replicate   6 =      -35.7803
+Energy for replicate   7 =      -35.4829
+Energy for replicate   8 =      -35.4109
+Energy for replicate   9 =      -35.5511
+Energy for replicate  10 =      -35.3760
+Energy for replicate  11 =      -35.3889
+Energy for replicate  12 =      -35.0967
+Energy for replicate  13 =      -35.4825
+Energy for replicate  14 =      -35.4085
+Energy for replicate  15 =      -35.5378
+Energy for replicate  16 =      -34.1242
+Energy for replicate  17 =      -33.1313
+Energy for replicate  18 =      -34.0281
+Energy for replicate  19 =      -33.8930
+Energy for replicate  20 =      -33.7734
+Energy for replicate  21 =      -33.8764
+Energy for replicate  22 =      -33.6728
+Energy for replicate  23 =      -33.9104
+Energy for replicate  24 =      -34.0096
+Energy for replicate  25 =      -33.6924
+Energy for replicate  26 =      -34.1101
+Energy for replicate  27 =      -33.9123
+Energy for replicate  28 =      -33.9855
+Energy for replicate  29 =      -33.9820
+Energy for replicate  30 =      -33.9813
+Energy for replicate  31 =      -33.7815
+Energy for replicate  32 =      -34.1978
+Total Energy of replicates =    -1107.9445
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+ NSTEP =     2000   TIME(PS) =       1.000  TEMP(K) =    18.94  PRESS =     0.0
+ Etot   =       -33.9726  EKtot   =         1.2422  EPtot      =       -35.2149
+ BOND   =         0.7634  ANGLE   =         1.9823  DIHED      =         8.8970
+ 1-4 NB =         2.9852  1-4 EEL =        45.1313  VDWAALS    =        -1.8135
+ EELEC  =       -75.5746  EGB     =       -17.5859  RESTRAINT  =         0.0000
+NEB replicate breakdown:
+Energy for replicate   1 =      -36.0245
+Energy for replicate   2 =      -35.2074
+Energy for replicate   3 =      -35.2149
+Energy for replicate   4 =      -34.9075
+Energy for replicate   5 =      -35.3892
+Energy for replicate   6 =      -35.3868
+Energy for replicate   7 =      -35.0803
+Energy for replicate   8 =      -35.2044
+Energy for replicate   9 =      -35.2772
+Energy for replicate  10 =      -34.8761
+Energy for replicate  11 =      -34.8449
+Energy for replicate  12 =      -35.0235
+Energy for replicate  13 =      -34.9337
+Energy for replicate  14 =      -35.4004
+Energy for replicate  15 =      -35.4111
+Energy for replicate  16 =      -34.0370
+Energy for replicate  17 =      -32.4347
+Energy for replicate  18 =      -33.9087
+Energy for replicate  19 =      -33.8134
+Energy for replicate  20 =      -33.5219
+Energy for replicate  21 =      -33.9536
+Energy for replicate  22 =      -33.7223
+Energy for replicate  23 =      -33.1800
+Energy for replicate  24 =      -33.8719
+Energy for replicate  25 =      -33.5540
+Energy for replicate  26 =      -33.4647
+Energy for replicate  27 =      -33.7010
+Energy for replicate  28 =      -33.5048
+Energy for replicate  29 =      -33.7138
+Energy for replicate  30 =      -33.7072
+Energy for replicate  31 =      -33.3434
+Energy for replicate  32 =      -34.1978
+Total Energy of replicates =    -1099.8121
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+ NSTEP =     2500   TIME(PS) =       1.250  TEMP(K) =    17.68  PRESS =     0.0
+ Etot   =       -33.4200  EKtot   =         1.1593  EPtot      =       -34.5793
+ BOND   =         0.8874  ANGLE   =         2.2384  DIHED      =         8.9590
+ 1-4 NB =         3.0689  1-4 EEL =        44.9680  VDWAALS    =        -1.8393
+ EELEC  =       -75.1349  EGB     =       -17.7268  RESTRAINT  =         0.0000
+NEB replicate breakdown:
+Energy for replicate   1 =      -36.0245
+Energy for replicate   2 =      -34.9847
+Energy for replicate   3 =      -34.5793
+Energy for replicate   4 =      -34.6369
+Energy for replicate   5 =      -34.7978
+Energy for replicate   6 =      -35.0800
+Energy for replicate   7 =      -34.5248
+Energy for replicate   8 =      -34.9792
+Energy for replicate   9 =      -35.1315
+Energy for replicate  10 =      -34.7456
+Energy for replicate  11 =      -35.2339
+Energy for replicate  12 =      -34.6922
+Energy for replicate  13 =      -34.7375
+Energy for replicate  14 =      -35.0595
+Energy for replicate  15 =      -34.9866
+Energy for replicate  16 =      -33.1313
+Energy for replicate  17 =      -32.1898
+Energy for replicate  18 =      -33.6396
+Energy for replicate  19 =      -33.6803
+Energy for replicate  20 =      -33.1406
+Energy for replicate  21 =      -33.5792
+Energy for replicate  22 =      -33.1019
+Energy for replicate  23 =      -33.4327
+Energy for replicate  24 =      -33.5935
+Energy for replicate  25 =      -33.3977
+Energy for replicate  26 =      -33.6410
+Energy for replicate  27 =      -33.1824
+Energy for replicate  28 =      -33.5398
+Energy for replicate  29 =      -33.5326
+Energy for replicate  30 =      -33.3739
+Energy for replicate  31 =      -32.8487
+Energy for replicate  32 =      -34.1978
+Total Energy of replicates =    -1091.3969
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+ NSTEP =     3000   TIME(PS) =       1.500  TEMP(K) =    14.47  PRESS =     0.0
+ Etot   =       -33.5333  EKtot   =         0.9489  EPtot      =       -34.4822
+ BOND   =         1.3165  ANGLE   =         2.2281  DIHED      =         9.0196
+ 1-4 NB =         2.8394  1-4 EEL =        45.1056  VDWAALS    =        -1.8101
+ EELEC  =       -75.2388  EGB     =       -17.9424  RESTRAINT  =         0.0000
+NEB replicate breakdown:
+Energy for replicate   1 =      -36.0245
+Energy for replicate   2 =      -34.6315
+Energy for replicate   3 =      -34.4822
+Energy for replicate   4 =      -34.5753
+Energy for replicate   5 =      -34.8451
+Energy for replicate   6 =      -34.7155
+Energy for replicate   7 =      -34.4082
+Energy for replicate   8 =      -34.7966
+Energy for replicate   9 =      -35.1501
+Energy for replicate  10 =      -34.4158
+Energy for replicate  11 =      -34.5841
+Energy for replicate  12 =      -34.8499
+Energy for replicate  13 =      -34.0464
+Energy for replicate  14 =      -34.8912
+Energy for replicate  15 =      -35.0450
+Energy for replicate  16 =      -31.7153
+Energy for replicate  17 =      -30.2102
+Energy for replicate  18 =      -33.7489
+Energy for replicate  19 =      -33.1787
+Energy for replicate  20 =      -33.2248
+Energy for replicate  21 =      -33.3129
+Energy for replicate  22 =      -33.0949
+Energy for replicate  23 =      -33.1515
+Energy for replicate  24 =      -33.7204
+Energy for replicate  25 =      -32.7585
+Energy for replicate  26 =      -33.4350
+Energy for replicate  27 =      -33.0411
+Energy for replicate  28 =      -33.3806
+Energy for replicate  29 =      -33.0426
+Energy for replicate  30 =      -33.2392
+Energy for replicate  31 =      -32.7390
+Energy for replicate  32 =      -34.1978
+Total Energy of replicates =    -1082.6529
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+ NSTEP =     3500   TIME(PS) =       1.750  TEMP(K) =    39.04  PRESS =     0.0
+ Etot   =       -32.0576  EKtot   =         2.5603  EPtot      =       -34.6178
+ BOND   =         0.9881  ANGLE   =         2.5837  DIHED      =         9.0650
+ 1-4 NB =         2.8612  1-4 EEL =        45.0012  VDWAALS    =        -1.8529
+ EELEC  =       -75.3336  EGB     =       -17.9306  RESTRAINT  =         0.0000
+NEB replicate breakdown:
+Energy for replicate   1 =      -36.0245
+Energy for replicate   2 =      -33.8839
+Energy for replicate   3 =      -34.6178
+Energy for replicate   4 =      -34.1806
+Energy for replicate   5 =      -33.9604
+Energy for replicate   6 =      -34.3928
+Energy for replicate   7 =      -34.5701
+Energy for replicate   8 =      -34.8322
+Energy for replicate   9 =      -34.8408
+Energy for replicate  10 =      -35.0210
+Energy for replicate  11 =      -33.9011
+Energy for replicate  12 =      -34.4613
+Energy for replicate  13 =      -34.4147
+Energy for replicate  14 =      -34.4756
+Energy for replicate  15 =      -34.6371
+Energy for replicate  16 =      -31.7215
+Energy for replicate  17 =      -30.3034
+Energy for replicate  18 =      -33.2640
+Energy for replicate  19 =      -32.6501
+Energy for replicate  20 =      -32.6750
+Energy for replicate  21 =      -33.1911
+Energy for replicate  22 =      -33.0129
+Energy for replicate  23 =      -32.6278
+Energy for replicate  24 =      -33.2191
+Energy for replicate  25 =      -33.3853
+Energy for replicate  26 =      -32.4191
+Energy for replicate  27 =      -33.2816
+Energy for replicate  28 =      -32.9932
+Energy for replicate  29 =      -32.6612
+Energy for replicate  30 =      -33.0276
+Energy for replicate  31 =      -32.6896
+Energy for replicate  32 =      -34.1978
+Total Energy of replicates =    -1075.5343
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+ NSTEP =     4000   TIME(PS) =       2.000  TEMP(K) =    36.63  PRESS =     0.0
+ Etot   =       -31.2334  EKtot   =         2.4020  EPtot      =       -33.6354
+ BOND   =         1.4511  ANGLE   =         2.5837  DIHED      =         9.2615
+ 1-4 NB =         2.9979  1-4 EEL =        45.0610  VDWAALS    =        -1.7139
+ EELEC  =       -75.6136  EGB     =       -17.6629  RESTRAINT  =         0.0000
+NEB replicate breakdown:
+Energy for replicate   1 =      -36.0245
+Energy for replicate   2 =      -33.5654
+Energy for replicate   3 =      -33.6354
+Energy for replicate   4 =      -33.7626
+Energy for replicate   5 =      -34.4165
+Energy for replicate   6 =      -34.5017
+Energy for replicate   7 =      -34.1033
+Energy for replicate   8 =      -33.5315
+Energy for replicate   9 =      -34.4484
+Energy for replicate  10 =      -34.4481
+Energy for replicate  11 =      -34.0520
+Energy for replicate  12 =      -33.7498
+Energy for replicate  13 =      -33.2125
+Energy for replicate  14 =      -34.2561
+Energy for replicate  15 =      -34.5913
+Energy for replicate  16 =      -31.5742
+Energy for replicate  17 =      -30.2142
+Energy for replicate  18 =      -32.7513
+Energy for replicate  19 =      -33.4236
+Energy for replicate  20 =      -33.0174
+Energy for replicate  21 =      -32.5366
+Energy for replicate  22 =      -32.7150
+Energy for replicate  23 =      -33.0242
+Energy for replicate  24 =      -32.7576
+Energy for replicate  25 =      -32.6149
+Energy for replicate  26 =      -32.7973
+Energy for replicate  27 =      -32.6422
+Energy for replicate  28 =      -32.2170
+Energy for replicate  29 =      -32.1627
+Energy for replicate  30 =      -32.6120
+Energy for replicate  31 =      -32.4147
+Energy for replicate  32 =      -34.1978
+Total Energy of replicates =    -1065.9716
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+ NSTEP =     4500   TIME(PS) =       2.250  TEMP(K) =    28.29  PRESS =     0.0
+ Etot   =       -32.2239  EKtot   =         1.8549  EPtot      =       -34.0788
+ BOND   =         1.1439  ANGLE   =         2.4698  DIHED      =         9.2538
+ 1-4 NB =         2.7835  1-4 EEL =        45.3173  VDWAALS    =        -1.9264
+ EELEC  =       -75.1485  EGB     =       -17.9723  RESTRAINT  =         0.0000
+NEB replicate breakdown:
+Energy for replicate   1 =      -36.0245
+Energy for replicate   2 =      -33.4768
+Energy for replicate   3 =      -34.0788
+Energy for replicate   4 =      -33.0474
+Energy for replicate   5 =      -33.8496
+Energy for replicate   6 =      -33.4255
+Energy for replicate   7 =      -34.0464
+Energy for replicate   8 =      -34.0592
+Energy for replicate   9 =      -33.6888
+Energy for replicate  10 =      -33.8273
+Energy for replicate  11 =      -33.9815
+Energy for replicate  12 =      -34.3187
+Energy for replicate  13 =      -33.5795
+Energy for replicate  14 =      -33.6309
+Energy for replicate  15 =      -33.6788
+Energy for replicate  16 =      -29.9850
+Energy for replicate  17 =      -29.4438
+Energy for replicate  18 =      -32.6952
+Energy for replicate  19 =      -32.2014
+Energy for replicate  20 =      -32.6169
+Energy for replicate  21 =      -32.4959
+Energy for replicate  22 =      -33.1547
+Energy for replicate  23 =      -32.6432
+Energy for replicate  24 =      -32.6198
+Energy for replicate  25 =      -32.0345
+Energy for replicate  26 =      -32.2113
+Energy for replicate  27 =      -32.4855
+Energy for replicate  28 =      -32.6530
+Energy for replicate  29 =      -32.5281
+Energy for replicate  30 =      -32.3468
+Energy for replicate  31 =      -32.0932
+Energy for replicate  32 =      -34.1978
+Total Energy of replicates =    -1057.1200
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+ NSTEP =     5000   TIME(PS) =       2.500  TEMP(K) =    43.32  PRESS =     0.0
+ Etot   =       -30.2718  EKtot   =         2.8406  EPtot      =       -33.1124
+ BOND   =         1.5705  ANGLE   =         2.6101  DIHED      =         9.6173
+ 1-4 NB =         2.7918  1-4 EEL =        45.4272  VDWAALS    =        -1.8422
+ EELEC  =       -75.4221  EGB     =       -17.8651  RESTRAINT  =         0.0000
+NEB replicate breakdown:
+Energy for replicate   1 =      -36.0245
+Energy for replicate   2 =      -32.6054
+Energy for replicate   3 =      -33.1124
+Energy for replicate   4 =      -33.6680
+Energy for replicate   5 =      -34.3085
+Energy for replicate   6 =      -33.6164
+Energy for replicate   7 =      -33.6758
+Energy for replicate   8 =      -33.6983
+Energy for replicate   9 =      -33.7631
+Energy for replicate  10 =      -34.4486
+Energy for replicate  11 =      -33.8540
+Energy for replicate  12 =      -32.9269
+Energy for replicate  13 =      -33.4498
+Energy for replicate  14 =      -33.9911
+Energy for replicate  15 =      -33.3178
+Energy for replicate  16 =      -30.2006
+Energy for replicate  17 =      -27.6781
+Energy for replicate  18 =      -32.3284
+Energy for replicate  19 =      -32.1548
+Energy for replicate  20 =      -32.3553
+Energy for replicate  21 =      -32.7390
+Energy for replicate  22 =      -32.2733
+Energy for replicate  23 =      -32.7695
+Energy for replicate  24 =      -32.0640
+Energy for replicate  25 =      -31.2347
+Energy for replicate  26 =      -32.2533
+Energy for replicate  27 =      -31.5449
+Energy for replicate  28 =      -32.4575
+Energy for replicate  29 =      -32.7209
+Energy for replicate  30 =      -32.1656
+Energy for replicate  31 =      -32.5525
+Energy for replicate  32 =      -34.1978
+Total Energy of replicates =    -1050.1506
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+ NSTEP =     5500   TIME(PS) =       2.750  TEMP(K) =    47.01  PRESS =     0.0
+ Etot   =       -30.5918  EKtot   =         3.0829  EPtot      =       -33.6748
+ BOND   =         1.9836  ANGLE   =         1.8365  DIHED      =         9.3134
+ 1-4 NB =         2.8282  1-4 EEL =        44.6762  VDWAALS    =        -1.8976
+ EELEC  =       -74.8834  EGB     =       -17.5317  RESTRAINT  =         0.0000
+NEB replicate breakdown:
+Energy for replicate   1 =      -36.0245
+Energy for replicate   2 =      -32.4585
+Energy for replicate   3 =      -33.6748
+Energy for replicate   4 =      -33.1725
+Energy for replicate   5 =      -33.6416
+Energy for replicate   6 =      -33.0443
+Energy for replicate   7 =      -33.4310
+Energy for replicate   8 =      -33.2353
+Energy for replicate   9 =      -32.9667
+Energy for replicate  10 =      -33.2101
+Energy for replicate  11 =      -33.3439
+Energy for replicate  12 =      -32.7122
+Energy for replicate  13 =      -33.4171
+Energy for replicate  14 =      -33.8742
+Energy for replicate  15 =      -33.5567
+Energy for replicate  16 =      -31.1298
+Energy for replicate  17 =      -27.8277
+Energy for replicate  18 =      -31.6897
+Energy for replicate  19 =      -32.2803
+Energy for replicate  20 =      -31.1428
+Energy for replicate  21 =      -32.0576
+Energy for replicate  22 =      -31.7989
+Energy for replicate  23 =      -31.8661
+Energy for replicate  24 =      -31.5400
+Energy for replicate  25 =      -32.7337
+Energy for replicate  26 =      -32.3347
+Energy for replicate  27 =      -31.5234
+Energy for replicate  28 =      -31.7307
+Energy for replicate  29 =      -32.2933
+Energy for replicate  30 =      -30.5789
+Energy for replicate  31 =      -31.8331
+Energy for replicate  32 =      -34.1978
+Total Energy of replicates =    -1040.3217
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+ NSTEP =     6000   TIME(PS) =       3.000  TEMP(K) =    43.36  PRESS =     0.0
+ Etot   =       -30.2297  EKtot   =         2.8434  EPtot      =       -33.0731
+ BOND   =         1.3489  ANGLE   =         3.1664  DIHED      =         9.6761
+ 1-4 NB =         2.5614  1-4 EEL =        44.5626  VDWAALS    =        -1.8769
+ EELEC  =       -74.4693  EGB     =       -18.0423  RESTRAINT  =         0.0000
+NEB replicate breakdown:
+Energy for replicate   1 =      -36.0245
+Energy for replicate   2 =      -32.6410
+Energy for replicate   3 =      -33.0731
+Energy for replicate   4 =      -32.9859
+Energy for replicate   5 =      -32.7306
+Energy for replicate   6 =      -32.4539
+Energy for replicate   7 =      -33.0378
+Energy for replicate   8 =      -33.5384
+Energy for replicate   9 =      -33.3048
+Energy for replicate  10 =      -32.8912
+Energy for replicate  11 =      -33.2883
+Energy for replicate  12 =      -34.0654
+Energy for replicate  13 =      -32.9099
+Energy for replicate  14 =      -32.6970
+Energy for replicate  15 =      -32.8093
+Energy for replicate  16 =      -30.3779
+Energy for replicate  17 =      -28.2147
+Energy for replicate  18 =      -32.1187
+Energy for replicate  19 =      -32.1905
+Energy for replicate  20 =      -32.3997
+Energy for replicate  21 =      -31.5926
+Energy for replicate  22 =      -31.1511
+Energy for replicate  23 =      -32.6388
+Energy for replicate  24 =      -31.9069
+Energy for replicate  25 =      -31.2164
+Energy for replicate  26 =      -31.0492
+Energy for replicate  27 =      -31.4722
+Energy for replicate  28 =      -31.2110
+Energy for replicate  29 =      -31.8331
+Energy for replicate  30 =      -31.9790
+Energy for replicate  31 =      -31.6210
+Energy for replicate  32 =      -34.1978
+Total Energy of replicates =    -1035.6219
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+ NSTEP =     6500   TIME(PS) =       3.250  TEMP(K) =    46.46  PRESS =     0.0
+ Etot   =       -29.7686  EKtot   =         3.0469  EPtot      =       -32.8155
+ BOND   =         1.8167  ANGLE   =         3.2609  DIHED      =         9.4765
+ 1-4 NB =         2.6333  1-4 EEL =        44.1231  VDWAALS    =        -1.8988
+ EELEC  =       -73.6827  EGB     =       -18.5446  RESTRAINT  =         0.0000
+NEB replicate breakdown:
+Energy for replicate   1 =      -36.0245
+Energy for replicate   2 =      -32.5821
+Energy for replicate   3 =      -32.8155
+Energy for replicate   4 =      -32.7548
+Energy for replicate   5 =      -32.2766
+Energy for replicate   6 =      -33.9809
+Energy for replicate   7 =      -32.4273
+Energy for replicate   8 =      -32.4634
+Energy for replicate   9 =      -33.2778
+Energy for replicate  10 =      -34.1978
+Energy for replicate  11 =      -32.7900
+Energy for replicate  12 =      -32.6109
+Energy for replicate  13 =      -33.0595
+Energy for replicate  14 =      -33.1910
+Energy for replicate  15 =      -32.8913
+Energy for replicate  16 =      -30.5365
+Energy for replicate  17 =      -27.1718
+Energy for replicate  18 =      -30.8111
+Energy for replicate  19 =      -31.7148
+Energy for replicate  20 =      -30.4328
+Energy for replicate  21 =      -30.6304
+Energy for replicate  22 =      -31.0780
+Energy for replicate  23 =      -31.5091
+Energy for replicate  24 =      -30.8361
+Energy for replicate  25 =      -31.2688
+Energy for replicate  26 =      -31.6827
+Energy for replicate  27 =      -30.9294
+Energy for replicate  28 =      -30.8998
+Energy for replicate  29 =      -30.1334
+Energy for replicate  30 =      -31.0933
+Energy for replicate  31 =      -31.5444
+Energy for replicate  32 =      -34.1978
+Total Energy of replicates =    -1023.8137
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+ NSTEP =     7000   TIME(PS) =       3.500  TEMP(K) =    61.87  PRESS =     0.0
+ Etot   =       -28.4618  EKtot   =         4.0571  EPtot      =       -32.5189
+ BOND   =         2.8391  ANGLE   =         2.8511  DIHED      =         9.4224
+ 1-4 NB =         2.2499  1-4 EEL =        44.3531  VDWAALS    =        -1.9034
+ EELEC  =       -74.0893  EGB     =       -18.2418  RESTRAINT  =         0.0000
+NEB replicate breakdown:
+Energy for replicate   1 =      -36.0245
+Energy for replicate   2 =      -32.0341
+Energy for replicate   3 =      -32.5189
+Energy for replicate   4 =      -31.5438
+Energy for replicate   5 =      -33.7913
+Energy for replicate   6 =      -32.2993
+Energy for replicate   7 =      -32.2153
+Energy for replicate   8 =      -33.0807
+Energy for replicate   9 =      -32.0811
+Energy for replicate  10 =      -32.5991
+Energy for replicate  11 =      -33.2910
+Energy for replicate  12 =      -32.1262
+Energy for replicate  13 =      -32.1822
+Energy for replicate  14 =      -32.3620
+Energy for replicate  15 =      -33.6836
+Energy for replicate  16 =      -28.8526
+Energy for replicate  17 =      -25.3428
+Energy for replicate  18 =      -30.4615
+Energy for replicate  19 =      -30.0849
+Energy for replicate  20 =      -30.0482
+Energy for replicate  21 =      -29.3076
+Energy for replicate  22 =      -30.5371
+Energy for replicate  23 =      -31.2903
+Energy for replicate  24 =      -30.6942
+Energy for replicate  25 =      -29.2488
+Energy for replicate  26 =      -31.2802
+Energy for replicate  27 =      -29.1760
+Energy for replicate  28 =      -30.4218
+Energy for replicate  29 =      -31.6711
+Energy for replicate  30 =      -31.2704
+Energy for replicate  31 =      -31.0290
+Energy for replicate  32 =      -34.1978
+Total Energy of replicates =    -1006.7476
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+ NSTEP =     7500   TIME(PS) =       3.750  TEMP(K) =    73.30  PRESS =     0.0
+ Etot   =       -26.2635  EKtot   =         4.8070  EPtot      =       -31.0705
+ BOND   =         2.8539  ANGLE   =         3.1646  DIHED      =         9.7629
+ 1-4 NB =         2.9175  1-4 EEL =        44.4943  VDWAALS    =        -1.9468
+ EELEC  =       -73.9720  EGB     =       -18.3448  RESTRAINT  =         0.0000
+NEB replicate breakdown:
+Energy for replicate   1 =      -36.0245
+Energy for replicate   2 =      -31.0302
+Energy for replicate   3 =      -31.0705
+Energy for replicate   4 =      -33.1850
+Energy for replicate   5 =      -33.1676
+Energy for replicate   6 =      -33.0961
+Energy for replicate   7 =      -31.7522
+Energy for replicate   8 =      -32.1374
+Energy for replicate   9 =      -32.3956
+Energy for replicate  10 =      -32.1608
+Energy for replicate  11 =      -32.5902
+Energy for replicate  12 =      -32.7434
+Energy for replicate  13 =      -31.8417
+Energy for replicate  14 =      -32.4585
+Energy for replicate  15 =      -32.1325
+Energy for replicate  16 =      -29.0734
+Energy for replicate  17 =      -26.0481
+Energy for replicate  18 =      -30.4472
+Energy for replicate  19 =      -30.7806
+Energy for replicate  20 =      -31.4393
+Energy for replicate  21 =      -30.7067
+Energy for replicate  22 =      -30.9163
+Energy for replicate  23 =      -30.7385
+Energy for replicate  24 =      -30.4687
+Energy for replicate  25 =      -29.7013
+Energy for replicate  26 =      -31.3955
+Energy for replicate  27 =      -29.8791
+Energy for replicate  28 =      -30.7712
+Energy for replicate  29 =      -29.8857
+Energy for replicate  30 =      -29.5734
+Energy for replicate  31 =      -29.9126
+Energy for replicate  32 =      -34.1978
+Total Energy of replicates =    -1003.7216
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+ NSTEP =     8000   TIME(PS) =       4.000  TEMP(K) =    69.22  PRESS =     0.0
+ Etot   =       -27.3817  EKtot   =         4.5392  EPtot      =       -31.9209
+ BOND   =         1.7918  ANGLE   =         3.8579  DIHED      =         9.3661
+ 1-4 NB =         2.9376  1-4 EEL =        43.8881  VDWAALS    =        -1.9479
+ EELEC  =       -73.9079  EGB     =       -17.9066  RESTRAINT  =         0.0000
+NEB replicate breakdown:
+Energy for replicate   1 =      -36.0245
+Energy for replicate   2 =      -31.3544
+Energy for replicate   3 =      -31.9209
+Energy for replicate   4 =      -32.5715
+Energy for replicate   5 =      -32.0879
+Energy for replicate   6 =      -32.7729
+Energy for replicate   7 =      -31.8536
+Energy for replicate   8 =      -31.0707
+Energy for replicate   9 =      -31.3789
+Energy for replicate  10 =      -33.2064
+Energy for replicate  11 =      -31.6850
+Energy for replicate  12 =      -31.2580
+Energy for replicate  13 =      -30.7245
+Energy for replicate  14 =      -32.3697
+Energy for replicate  15 =      -31.3788
+Energy for replicate  16 =      -29.2267
+Energy for replicate  17 =      -27.3253
+Energy for replicate  18 =      -30.5382
+Energy for replicate  19 =      -30.8420
+Energy for replicate  20 =      -30.2293
+Energy for replicate  21 =      -31.3796
+Energy for replicate  22 =      -30.8947
+Energy for replicate  23 =      -29.4861
+Energy for replicate  24 =      -31.1851
+Energy for replicate  25 =      -29.1958
+Energy for replicate  26 =      -29.8866
+Energy for replicate  27 =      -31.8855
+Energy for replicate  28 =      -30.7420
+Energy for replicate  29 =      -29.9965
+Energy for replicate  30 =      -30.6358
+Energy for replicate  31 =      -29.9270
+Energy for replicate  32 =      -34.1978
+Total Energy of replicates =     -999.2318
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+ NSTEP =     8500   TIME(PS) =       4.250  TEMP(K) =    75.92  PRESS =     0.0
+ Etot   =       -26.1403  EKtot   =         4.9785  EPtot      =       -31.1188
+ BOND   =         3.4621  ANGLE   =         3.2679  DIHED      =         9.3532
+ 1-4 NB =         2.7935  1-4 EEL =        43.4712  VDWAALS    =        -1.8884
+ EELEC  =       -73.9488  EGB     =       -17.6296  RESTRAINT  =         0.0000
+NEB replicate breakdown:
+Energy for replicate   1 =      -36.0245
+Energy for replicate   2 =      -31.5212
+Energy for replicate   3 =      -31.1188
+Energy for replicate   4 =      -33.1558
+Energy for replicate   5 =      -32.3959
+Energy for replicate   6 =      -33.0923
+Energy for replicate   7 =      -31.7148
+Energy for replicate   8 =      -32.8896
+Energy for replicate   9 =      -31.9100
+Energy for replicate  10 =      -33.1095
+Energy for replicate  11 =      -32.2624
+Energy for replicate  12 =      -31.5568
+Energy for replicate  13 =      -31.4179
+Energy for replicate  14 =      -32.8953
+Energy for replicate  15 =      -31.1746
+Energy for replicate  16 =      -30.0493
+Energy for replicate  17 =      -27.6152
+Energy for replicate  18 =      -28.8265
+Energy for replicate  19 =      -30.2219
+Energy for replicate  20 =      -29.5911
+Energy for replicate  21 =      -31.1329
+Energy for replicate  22 =      -29.3839
+Energy for replicate  23 =      -31.1328
+Energy for replicate  24 =      -29.5071
+Energy for replicate  25 =      -31.9224
+Energy for replicate  26 =      -30.7234
+Energy for replicate  27 =      -31.4524
+Energy for replicate  28 =      -30.6052
+Energy for replicate  29 =      -29.8898
+Energy for replicate  30 =      -30.8841
+Energy for replicate  31 =      -31.2943
+Energy for replicate  32 =      -34.1978
+Total Energy of replicates =    -1004.6695
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+ NSTEP =     9000   TIME(PS) =       4.500  TEMP(K) =    81.72  PRESS =     0.0
+ Etot   =       -28.0854  EKtot   =         5.3590  EPtot      =       -33.4444
+ BOND   =         1.6687  ANGLE   =         2.7106  DIHED      =         9.2121
+ 1-4 NB =         3.0570  1-4 EEL =        44.1716  VDWAALS    =        -1.8643
+ EELEC  =       -74.5343  EGB     =       -17.8657  RESTRAINT  =         0.0000
+NEB replicate breakdown:
+Energy for replicate   1 =      -36.0245
+Energy for replicate   2 =      -30.8433
+Energy for replicate   3 =      -33.4444
+Energy for replicate   4 =      -32.9830
+Energy for replicate   5 =      -30.6493
+Energy for replicate   6 =      -31.1406
+Energy for replicate   7 =      -29.5480
+Energy for replicate   8 =      -32.0333
+Energy for replicate   9 =      -30.5505
+Energy for replicate  10 =      -32.4097
+Energy for replicate  11 =      -31.8145
+Energy for replicate  12 =      -32.1306
+Energy for replicate  13 =      -31.8498
+Energy for replicate  14 =      -31.6941
+Energy for replicate  15 =      -30.9505
+Energy for replicate  16 =      -30.2983
+Energy for replicate  17 =      -25.4277
+Energy for replicate  18 =      -29.2783
+Energy for replicate  19 =      -29.1901
+Energy for replicate  20 =      -29.4465
+Energy for replicate  21 =      -31.0289
+Energy for replicate  22 =      -30.9181
+Energy for replicate  23 =      -30.6142
+Energy for replicate  24 =      -29.6377
+Energy for replicate  25 =      -28.4193
+Energy for replicate  26 =      -30.6838
+Energy for replicate  27 =      -31.3255
+Energy for replicate  28 =      -30.7137
+Energy for replicate  29 =      -29.2894
+Energy for replicate  30 =      -29.7264
+Energy for replicate  31 =      -29.4848
+Energy for replicate  32 =      -34.1978
+Total Energy of replicates =     -987.7465
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+ NSTEP =     9500   TIME(PS) =       4.750  TEMP(K) =    73.23  PRESS =     0.0
+ Etot   =       -27.7954  EKtot   =         4.8020  EPtot      =       -32.5974
+ BOND   =         3.2304  ANGLE   =         3.0243  DIHED      =         9.2083
+ 1-4 NB =         2.4251  1-4 EEL =        43.8885  VDWAALS    =        -1.9257
+ EELEC  =       -73.8647  EGB     =       -18.5836  RESTRAINT  =         0.0000
+NEB replicate breakdown:
+Energy for replicate   1 =      -36.0245
+Energy for replicate   2 =      -28.3571
+Energy for replicate   3 =      -32.5974
+Energy for replicate   4 =      -32.5546
+Energy for replicate   5 =      -31.7561
+Energy for replicate   6 =      -30.5354
+Energy for replicate   7 =      -30.8470
+Energy for replicate   8 =      -30.5535
+Energy for replicate   9 =      -31.2272
+Energy for replicate  10 =      -31.8000
+Energy for replicate  11 =      -32.8208
+Energy for replicate  12 =      -32.2031
+Energy for replicate  13 =      -30.6406
+Energy for replicate  14 =      -31.1930
+Energy for replicate  15 =      -29.2641
+Energy for replicate  16 =      -29.0136
+Energy for replicate  17 =      -26.2660
+Energy for replicate  18 =      -28.3873
+Energy for replicate  19 =      -29.3070
+Energy for replicate  20 =      -29.9595
+Energy for replicate  21 =      -29.7452
+Energy for replicate  22 =      -31.0182
+Energy for replicate  23 =      -31.2894
+Energy for replicate  24 =      -29.5829
+Energy for replicate  25 =      -29.9287
+Energy for replicate  26 =      -30.1925
+Energy for replicate  27 =      -31.0795
+Energy for replicate  28 =      -31.0799
+Energy for replicate  29 =      -30.5049
+Energy for replicate  30 =      -30.6922
+Energy for replicate  31 =      -29.1631
+Energy for replicate  32 =      -34.1978
+Total Energy of replicates =     -983.7822
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+ NSTEP =    10000   TIME(PS) =       5.000  TEMP(K) =    77.14  PRESS =     0.0
+ Etot   =       -24.0278  EKtot   =         5.0585  EPtot      =       -29.0863
+ BOND   =         2.3045  ANGLE   =         6.3013  DIHED      =        10.1514
+ 1-4 NB =         2.6374  1-4 EEL =        44.3146  VDWAALS    =        -1.8340
+ EELEC  =       -74.8095  EGB     =       -18.1520  RESTRAINT  =         0.0000
+NEB replicate breakdown:
+Energy for replicate   1 =      -36.0245
+Energy for replicate   2 =      -29.7114
+Energy for replicate   3 =      -29.0863
+Energy for replicate   4 =      -30.2600
+Energy for replicate   5 =      -30.4016
+Energy for replicate   6 =      -31.0694
+Energy for replicate   7 =      -31.1366
+Energy for replicate   8 =      -31.3452
+Energy for replicate   9 =      -31.1072
+Energy for replicate  10 =      -31.4408
+Energy for replicate  11 =      -31.3908
+Energy for replicate  12 =      -30.4558
+Energy for replicate  13 =      -30.5816
+Energy for replicate  14 =      -30.4734
+Energy for replicate  15 =      -30.4167
+Energy for replicate  16 =      -26.8592
+Energy for replicate  17 =      -26.8445
+Energy for replicate  18 =      -27.3582
+Energy for replicate  19 =      -30.2543
+Energy for replicate  20 =      -28.0077
+Energy for replicate  21 =      -30.8284
+Energy for replicate  22 =      -28.5578
+Energy for replicate  23 =      -29.6433
+Energy for replicate  24 =      -28.4604
+Energy for replicate  25 =      -28.7457
+Energy for replicate  26 =      -27.8375
+Energy for replicate  27 =      -29.5917
+Energy for replicate  28 =      -29.7154
+Energy for replicate  29 =      -29.6997
+Energy for replicate  30 =      -29.9230
+Energy for replicate  31 =      -28.3613
+Energy for replicate  32 =      -34.1978
+Total Energy of replicates =     -959.7873
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+ NSTEP =    10500   TIME(PS) =       5.250  TEMP(K) =    98.36  PRESS =     0.0
+ Etot   =       -22.2521  EKtot   =         6.4504  EPtot      =       -28.7024
+ BOND   =         3.2181  ANGLE   =         5.9204  DIHED      =        10.1535
+ 1-4 NB =         2.4398  1-4 EEL =        44.2460  VDWAALS    =        -1.8847
+ EELEC  =       -75.0199  EGB     =       -17.7756  RESTRAINT  =         0.0000
+NEB replicate breakdown:
+Energy for replicate   1 =      -36.0245
+Energy for replicate   2 =      -29.6627
+Energy for replicate   3 =      -28.7024
+Energy for replicate   4 =      -30.2298
+Energy for replicate   5 =      -31.0535
+Energy for replicate   6 =      -30.3678
+Energy for replicate   7 =      -30.7831
+Energy for replicate   8 =      -32.1122
+Energy for replicate   9 =      -30.0810
+Energy for replicate  10 =      -30.5380
+Energy for replicate  11 =      -30.1938
+Energy for replicate  12 =      -29.7408
+Energy for replicate  13 =      -31.3274
+Energy for replicate  14 =      -30.9919
+Energy for replicate  15 =      -32.0348
+Energy for replicate  16 =      -26.2551
+Energy for replicate  17 =      -28.7448
+Energy for replicate  18 =      -24.6723
+Energy for replicate  19 =      -29.2501
+Energy for replicate  20 =      -29.9371
+Energy for replicate  21 =      -30.6062
+Energy for replicate  22 =      -29.4384
+Energy for replicate  23 =      -29.1565
+Energy for replicate  24 =      -25.7409
+Energy for replicate  25 =      -30.1862
+Energy for replicate  26 =      -28.6813
+Energy for replicate  27 =      -28.7849
+Energy for replicate  28 =      -29.0814
+Energy for replicate  29 =      -29.3532
+Energy for replicate  30 =      -32.3419
+Energy for replicate  31 =      -28.2418
+Energy for replicate  32 =      -34.1978
+Total Energy of replicates =     -958.5137
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+ NSTEP =    11000   TIME(PS) =       5.500  TEMP(K) =   100.18  PRESS =     0.0
+ Etot   =       -21.4225  EKtot   =         6.5694  EPtot      =       -27.9918
+ BOND   =         5.8837  ANGLE   =         4.0551  DIHED      =        10.3207
+ 1-4 NB =         2.1248  1-4 EEL =        42.9948  VDWAALS    =        -1.9002
+ EELEC  =       -73.5341  EGB     =       -17.9367  RESTRAINT  =         0.0000
+NEB replicate breakdown:
+Energy for replicate   1 =      -36.0245
+Energy for replicate   2 =      -31.5066
+Energy for replicate   3 =      -27.9918
+Energy for replicate   4 =      -32.8910
+Energy for replicate   5 =      -31.9978
+Energy for replicate   6 =      -28.0699
+Energy for replicate   7 =      -31.0038
+Energy for replicate   8 =      -30.8762
+Energy for replicate   9 =      -29.9987
+Energy for replicate  10 =      -31.6173
+Energy for replicate  11 =      -29.6553
+Energy for replicate  12 =      -30.9011
+Energy for replicate  13 =      -31.6087
+Energy for replicate  14 =      -30.2332
+Energy for replicate  15 =      -31.7243
+Energy for replicate  16 =      -29.1454
+Energy for replicate  17 =      -27.9109
+Energy for replicate  18 =      -26.8555
+Energy for replicate  19 =      -27.2739
+Energy for replicate  20 =      -27.3268
+Energy for replicate  21 =      -28.7370
+Energy for replicate  22 =      -30.8894
+Energy for replicate  23 =      -27.1255
+Energy for replicate  24 =      -27.5626
+Energy for replicate  25 =      -31.1169
+Energy for replicate  26 =      -27.0383
+Energy for replicate  27 =      -29.0579
+Energy for replicate  28 =      -29.5949
+Energy for replicate  29 =      -28.5342
+Energy for replicate  30 =      -30.1359
+Energy for replicate  31 =      -28.6646
+Energy for replicate  32 =      -34.1978
+Total Energy of replicates =     -957.2678
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+ NSTEP =    11500   TIME(PS) =       5.750  TEMP(K) =    80.63  PRESS =     0.0
+ Etot   =       -25.0959  EKtot   =         5.2877  EPtot      =       -30.3836
+ BOND   =         2.3870  ANGLE   =         4.7260  DIHED      =         9.6942
+ 1-4 NB =         3.2164  1-4 EEL =        43.0645  VDWAALS    =        -1.7882
+ EELEC  =       -74.8073  EGB     =       -16.8762  RESTRAINT  =         0.0000
+NEB replicate breakdown:
+Energy for replicate   1 =      -36.0245
+Energy for replicate   2 =      -30.1397
+Energy for replicate   3 =      -30.3836
+Energy for replicate   4 =      -30.9216
+Energy for replicate   5 =      -29.4322
+Energy for replicate   6 =      -29.3833
+Energy for replicate   7 =      -31.5887
+Energy for replicate   8 =      -30.2919
+Energy for replicate   9 =      -30.3334
+Energy for replicate  10 =      -30.4117
+Energy for replicate  11 =      -30.6660
+Energy for replicate  12 =      -30.4813
+Energy for replicate  13 =      -29.0433
+Energy for replicate  14 =      -30.9893
+Energy for replicate  15 =      -30.7540
+Energy for replicate  16 =      -27.7186
+Energy for replicate  17 =      -26.3565
+Energy for replicate  18 =      -28.7659
+Energy for replicate  19 =      -29.9616
+Energy for replicate  20 =      -29.0501
+Energy for replicate  21 =      -28.2554
+Energy for replicate  22 =      -26.1037
+Energy for replicate  23 =      -28.7412
+Energy for replicate  24 =      -29.3840
+Energy for replicate  25 =      -24.7873
+Energy for replicate  26 =      -28.0843
+Energy for replicate  27 =      -28.1194
+Energy for replicate  28 =      -26.2843
+Energy for replicate  29 =      -28.6019
+Energy for replicate  30 =      -29.1767
+Energy for replicate  31 =      -30.1701
+Energy for replicate  32 =      -34.1978
+Total Energy of replicates =     -944.6035
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+ NSTEP =    12000   TIME(PS) =       6.000  TEMP(K) =   101.19  PRESS =     0.0
+ Etot   =       -22.4984  EKtot   =         6.6361  EPtot      =       -29.1345
+ BOND   =         4.2296  ANGLE   =         4.7702  DIHED      =        10.0476
+ 1-4 NB =         2.3862  1-4 EEL =        44.0319  VDWAALS    =        -1.8003
+ EELEC  =       -74.3549  EGB     =       -18.4449  RESTRAINT  =         0.0000
+NEB replicate breakdown:
+Energy for replicate   1 =      -36.0245
+Energy for replicate   2 =      -29.8409
+Energy for replicate   3 =      -29.1345
+Energy for replicate   4 =      -31.3937
+Energy for replicate   5 =      -31.8456
+Energy for replicate   6 =      -30.7901
+Energy for replicate   7 =      -29.6926
+Energy for replicate   8 =      -28.7678
+Energy for replicate   9 =      -26.7948
+Energy for replicate  10 =      -30.5746
+Energy for replicate  11 =      -30.1274
+Energy for replicate  12 =      -29.9708
+Energy for replicate  13 =      -30.2463
+Energy for replicate  14 =      -29.4057
+Energy for replicate  15 =      -30.8668
+Energy for replicate  16 =      -29.2957
+Energy for replicate  17 =      -28.0425
+Energy for replicate  18 =      -28.3971
+Energy for replicate  19 =      -28.2868
+Energy for replicate  20 =      -29.0874
+Energy for replicate  21 =      -29.1722
+Energy for replicate  22 =      -27.9745
+Energy for replicate  23 =      -29.9685
+Energy for replicate  24 =      -28.8311
+Energy for replicate  25 =      -29.4849
+Energy for replicate  26 =      -29.5670
+Energy for replicate  27 =      -28.7688
+Energy for replicate  28 =      -28.7270
+Energy for replicate  29 =      -27.6312
+Energy for replicate  30 =      -29.0621
+Energy for replicate  31 =      -28.2922
+Energy for replicate  32 =      -34.1978
+Total Energy of replicates =     -950.2627
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+ NSTEP =    12500   TIME(PS) =       6.250  TEMP(K) =   137.49  PRESS =     0.0
+ Etot   =       -20.6728  EKtot   =         9.0162  EPtot      =       -29.6890
+ BOND   =         1.8790  ANGLE   =         5.3180  DIHED      =        10.0707
+ 1-4 NB =         2.9790  1-4 EEL =        45.0058  VDWAALS    =        -1.8349
+ EELEC  =       -75.1769  EGB     =       -17.9297  RESTRAINT  =         0.0000
+NEB replicate breakdown:
+Energy for replicate   1 =      -36.0245
+Energy for replicate   2 =      -29.8339
+Energy for replicate   3 =      -29.6890
+Energy for replicate   4 =      -30.0960
+Energy for replicate   5 =      -30.9235
+Energy for replicate   6 =      -28.6052
+Energy for replicate   7 =      -30.3923
+Energy for replicate   8 =      -29.5254
+Energy for replicate   9 =      -30.5117
+Energy for replicate  10 =      -29.3270
+Energy for replicate  11 =      -29.3977
+Energy for replicate  12 =      -31.6792
+Energy for replicate  13 =      -26.8955
+Energy for replicate  14 =      -31.2038
+Energy for replicate  15 =      -30.5328
+Energy for replicate  16 =      -29.1888
+Energy for replicate  17 =      -28.9353
+Energy for replicate  18 =      -25.3858
+Energy for replicate  19 =      -29.5798
+Energy for replicate  20 =      -29.0889
+Energy for replicate  21 =      -30.2821
+Energy for replicate  22 =      -28.5291
+Energy for replicate  23 =      -26.3753
+Energy for replicate  24 =      -25.6881
+Energy for replicate  25 =      -28.9294
+Energy for replicate  26 =      -28.0325
+Energy for replicate  27 =      -27.3744
+Energy for replicate  28 =      -29.7179
+Energy for replicate  29 =      -30.1088
+Energy for replicate  30 =      -29.8947
+Energy for replicate  31 =      -27.4354
+Energy for replicate  32 =      -34.1978
+Total Energy of replicates =     -943.3817
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+ NSTEP =    13000   TIME(PS) =       6.500  TEMP(K) =   113.58  PRESS =     0.0
+ Etot   =       -22.5168  EKtot   =         7.4484  EPtot      =       -29.9652
+ BOND   =         1.5072  ANGLE   =         4.5740  DIHED      =        10.2540
+ 1-4 NB =         2.9971  1-4 EEL =        45.2511  VDWAALS    =        -1.8762
+ EELEC  =       -74.5612  EGB     =       -18.1113  RESTRAINT  =         0.0000
+NEB replicate breakdown:
+Energy for replicate   1 =      -36.0245
+Energy for replicate   2 =      -29.6331
+Energy for replicate   3 =      -29.9652
+Energy for replicate   4 =      -27.9529
+Energy for replicate   5 =      -31.2596
+Energy for replicate   6 =      -29.5180
+Energy for replicate   7 =      -29.4923
+Energy for replicate   8 =      -30.9010
+Energy for replicate   9 =      -28.7341
+Energy for replicate  10 =      -30.2955
+Energy for replicate  11 =      -29.9623
+Energy for replicate  12 =      -28.4360
+Energy for replicate  13 =      -30.3226
+Energy for replicate  14 =      -29.6129
+Energy for replicate  15 =      -30.6872
+Energy for replicate  16 =      -25.0971
+Energy for replicate  17 =      -28.7271
+Energy for replicate  18 =      -27.7447
+Energy for replicate  19 =      -29.5542
+Energy for replicate  20 =      -27.4319
+Energy for replicate  21 =      -28.6834
+Energy for replicate  22 =      -28.3407
+Energy for replicate  23 =      -27.6107
+Energy for replicate  24 =      -27.6845
+Energy for replicate  25 =      -28.8659
+Energy for replicate  26 =      -28.8835
+Energy for replicate  27 =      -26.6905
+Energy for replicate  28 =      -29.3695
+Energy for replicate  29 =      -28.8311
+Energy for replicate  30 =      -28.6796
+Energy for replicate  31 =      -26.2262
+Energy for replicate  32 =      -34.1978
+Total Energy of replicates =     -935.4159
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+ NSTEP =    13500   TIME(PS) =       6.750  TEMP(K) =   114.39  PRESS =     0.0
+ Etot   =       -21.2709  EKtot   =         7.5014  EPtot      =       -28.7723
+ BOND   =         4.5447  ANGLE   =         1.9092  DIHED      =         9.9472
+ 1-4 NB =         4.3858  1-4 EEL =        46.6388  VDWAALS    =        -1.8863
+ EELEC  =       -75.8841  EGB     =       -18.4276  RESTRAINT  =         0.0000
+NEB replicate breakdown:
+Energy for replicate   1 =      -36.0245
+Energy for replicate   2 =      -29.5441
+Energy for replicate   3 =      -28.7723
+Energy for replicate   4 =      -28.8050
+Energy for replicate   5 =      -29.5989
+Energy for replicate   6 =      -30.6451
+Energy for replicate   7 =      -29.6813
+Energy for replicate   8 =      -28.8984
+Energy for replicate   9 =      -29.8509
+Energy for replicate  10 =      -29.3128
+Energy for replicate  11 =      -30.3990
+Energy for replicate  12 =      -30.4714
+Energy for replicate  13 =      -28.9867
+Energy for replicate  14 =      -30.7462
+Energy for replicate  15 =      -27.6900
+Energy for replicate  16 =      -26.0127
+Energy for replicate  17 =      -27.4443
+Energy for replicate  18 =      -22.3011
+Energy for replicate  19 =      -28.2038
+Energy for replicate  20 =      -29.4241
+Energy for replicate  21 =      -25.5060
+Energy for replicate  22 =      -26.2881
+Energy for replicate  23 =      -26.6891
+Energy for replicate  24 =      -22.5330
+Energy for replicate  25 =      -28.1251
+Energy for replicate  26 =      -27.1973
+Energy for replicate  27 =      -28.7582
+Energy for replicate  28 =      -30.7522
+Energy for replicate  29 =      -24.6818
+Energy for replicate  30 =      -27.6185
+Energy for replicate  31 =      -28.6363
+Energy for replicate  32 =      -34.1978
+Total Energy of replicates =     -913.7960
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+ NSTEP =    14000   TIME(PS) =       7.000  TEMP(K) =   112.67  PRESS =     0.0
+ Etot   =       -23.6177  EKtot   =         7.3885  EPtot      =       -31.0062
+ BOND   =         1.9382  ANGLE   =         3.3696  DIHED      =         9.6677
+ 1-4 NB =         3.0623  1-4 EEL =        46.2045  VDWAALS    =        -1.8534
+ EELEC  =       -75.1357  EGB     =       -18.2595  RESTRAINT  =         0.0000
+NEB replicate breakdown:
+Energy for replicate   1 =      -36.0245
+Energy for replicate   2 =      -29.5546
+Energy for replicate   3 =      -31.0062
+Energy for replicate   4 =      -28.0799
+Energy for replicate   5 =      -27.4332
+Energy for replicate   6 =      -28.8191
+Energy for replicate   7 =      -26.9466
+Energy for replicate   8 =      -29.8983
+Energy for replicate   9 =      -25.8435
+Energy for replicate  10 =      -29.1598
+Energy for replicate  11 =      -26.5365
+Energy for replicate  12 =      -28.2995
+Energy for replicate  13 =      -28.0545
+Energy for replicate  14 =      -29.4592
+Energy for replicate  15 =      -30.1029
+Energy for replicate  16 =      -25.2468
+Energy for replicate  17 =      -28.4947
+Energy for replicate  18 =      -27.8406
+Energy for replicate  19 =      -30.0831
+Energy for replicate  20 =      -29.2833
+Energy for replicate  21 =      -28.0177
+Energy for replicate  22 =      -28.0198
+Energy for replicate  23 =      -26.8815
+Energy for replicate  24 =      -28.1314
+Energy for replicate  25 =      -27.0101
+Energy for replicate  26 =      -28.8056
+Energy for replicate  27 =      -26.2726
+Energy for replicate  28 =      -27.3457
+Energy for replicate  29 =      -29.3229
+Energy for replicate  30 =      -27.4919
+Energy for replicate  31 =      -29.1386
+Energy for replicate  32 =      -34.1978
+Total Energy of replicates =     -916.8024
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+ NSTEP =    14500   TIME(PS) =       7.250  TEMP(K) =   126.91  PRESS =     0.0
+ Etot   =       -20.0982  EKtot   =         8.3223  EPtot      =       -28.4204
+ BOND   =         6.1887  ANGLE   =         2.7460  DIHED      =         9.6044
+ 1-4 NB =         3.4913  1-4 EEL =        43.9733  VDWAALS    =        -1.9350
+ EELEC  =       -74.7310  EGB     =       -17.7582  RESTRAINT  =         0.0000
+NEB replicate breakdown:
+Energy for replicate   1 =      -36.0245
+Energy for replicate   2 =      -29.9492
+Energy for replicate   3 =      -28.4204
+Energy for replicate   4 =      -30.3798
+Energy for replicate   5 =      -27.8499
+Energy for replicate   6 =      -30.8355
+Energy for replicate   7 =      -29.4583
+Energy for replicate   8 =      -29.4311
+Energy for replicate   9 =      -27.1085
+Energy for replicate  10 =      -29.6369
+Energy for replicate  11 =      -29.6547
+Energy for replicate  12 =      -28.9564
+Energy for replicate  13 =      -26.8363
+Energy for replicate  14 =      -26.6702
+Energy for replicate  15 =      -30.2711
+Energy for replicate  16 =      -26.5080
+Energy for replicate  17 =      -26.8350
+Energy for replicate  18 =      -26.6063
+Energy for replicate  19 =      -27.8941
+Energy for replicate  20 =      -26.6659
+Energy for replicate  21 =      -27.0398
+Energy for replicate  22 =      -27.0705
+Energy for replicate  23 =      -29.3196
+Energy for replicate  24 =      -26.7839
+Energy for replicate  25 =      -28.4965
+Energy for replicate  26 =      -27.4254
+Energy for replicate  27 =      -28.2679
+Energy for replicate  28 =      -28.8430
+Energy for replicate  29 =      -21.0888
+Energy for replicate  30 =      -27.3882
+Energy for replicate  31 =      -26.8404
+Energy for replicate  32 =      -34.1978
+Total Energy of replicates =     -908.7541
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+ NSTEP =    15000   TIME(PS) =       7.500  TEMP(K) =   163.54  PRESS =     0.0
+ Etot   =       -19.0005  EKtot   =        10.7243  EPtot      =       -29.7248
+ BOND   =         2.2031  ANGLE   =         5.6716  DIHED      =         9.2975
+ 1-4 NB =         3.3822  1-4 EEL =        43.9930  VDWAALS    =        -1.9658
+ EELEC  =       -74.0021  EGB     =       -18.3042  RESTRAINT  =         0.0000
+NEB replicate breakdown:
+Energy for replicate   1 =      -36.0245
+Energy for replicate   2 =      -28.3853
+Energy for replicate   3 =      -29.7248
+Energy for replicate   4 =      -28.7454
+Energy for replicate   5 =      -28.6289
+Energy for replicate   6 =      -27.7209
+Energy for replicate   7 =      -29.4439
+Energy for replicate   8 =      -30.4704
+Energy for replicate   9 =      -29.9239
+Energy for replicate  10 =      -30.8950
+Energy for replicate  11 =      -28.5237
+Energy for replicate  12 =      -27.9052
+Energy for replicate  13 =      -28.5368
+Energy for replicate  14 =      -28.3781
+Energy for replicate  15 =      -30.3363
+Energy for replicate  16 =      -25.6535
+Energy for replicate  17 =      -22.8058
+Energy for replicate  18 =      -26.6619
+Energy for replicate  19 =      -28.3914
+Energy for replicate  20 =      -27.6677
+Energy for replicate  21 =      -26.2457
+Energy for replicate  22 =      -28.6815
+Energy for replicate  23 =      -27.2087
+Energy for replicate  24 =      -26.6654
+Energy for replicate  25 =      -29.7224
+Energy for replicate  26 =      -25.2991
+Energy for replicate  27 =      -27.6688
+Energy for replicate  28 =      -27.8514
+Energy for replicate  29 =      -23.5674
+Energy for replicate  30 =      -24.4856
+Energy for replicate  31 =      -27.5446
+Energy for replicate  32 =      -34.1978
+Total Energy of replicates =     -903.9617
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+ NSTEP =    15500   TIME(PS) =       7.750  TEMP(K) =   103.09  PRESS =     0.0
+ Etot   =       -20.8797  EKtot   =         6.7602  EPtot      =       -27.6399
+ BOND   =         3.1077  ANGLE   =         5.2001  DIHED      =        10.8478
+ 1-4 NB =         3.6766  1-4 EEL =        43.8716  VDWAALS    =        -2.0340
+ EELEC  =       -74.1159  EGB     =       -18.1939  RESTRAINT  =         0.0000
+NEB replicate breakdown:
+Energy for replicate   1 =      -36.0245
+Energy for replicate   2 =      -29.7982
+Energy for replicate   3 =      -27.6399
+Energy for replicate   4 =      -28.2797
+Energy for replicate   5 =      -27.6005
+Energy for replicate   6 =      -29.8036
+Energy for replicate   7 =      -30.6078
+Energy for replicate   8 =      -29.4429
+Energy for replicate   9 =      -26.1424
+Energy for replicate  10 =      -29.2651
+Energy for replicate  11 =      -29.1336
+Energy for replicate  12 =      -28.1672
+Energy for replicate  13 =      -27.2876
+Energy for replicate  14 =      -28.4048
+Energy for replicate  15 =      -27.3607
+Energy for replicate  16 =      -26.1690
+Energy for replicate  17 =      -25.2013
+Energy for replicate  18 =      -24.9342
+Energy for replicate  19 =      -26.0652
+Energy for replicate  20 =      -25.3407
+Energy for replicate  21 =      -26.9815
+Energy for replicate  22 =      -24.6679
+Energy for replicate  23 =      -28.1521
+Energy for replicate  24 =      -26.0920
+Energy for replicate  25 =      -24.9299
+Energy for replicate  26 =      -27.3782
+Energy for replicate  27 =      -28.4479
+Energy for replicate  28 =      -28.3915
+Energy for replicate  29 =      -27.5182
+Energy for replicate  30 =      -26.5723
+Energy for replicate  31 =      -27.0049
+Energy for replicate  32 =      -34.1978
+Total Energy of replicates =     -893.0029
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+ NSTEP =    16000   TIME(PS) =       8.000  TEMP(K) =   132.16  PRESS =     0.0
+ Etot   =       -17.8139  EKtot   =         8.6668  EPtot      =       -26.4807
+ BOND   =         4.3020  ANGLE   =         5.2701  DIHED      =         9.6841
+ 1-4 NB =         3.8343  1-4 EEL =        46.0396  VDWAALS    =        -1.9040
+ EELEC  =       -75.4632  EGB     =       -18.2436  RESTRAINT  =         0.0000
+NEB replicate breakdown:
+Energy for replicate   1 =      -36.0245
+Energy for replicate   2 =      -28.4140
+Energy for replicate   3 =      -26.4807
+Energy for replicate   4 =      -26.5718
+Energy for replicate   5 =      -26.5241
+Energy for replicate   6 =      -27.2579
+Energy for replicate   7 =      -26.4021
+Energy for replicate   8 =      -27.0904
+Energy for replicate   9 =      -28.1038
+Energy for replicate  10 =      -27.1228
+Energy for replicate  11 =      -29.4923
+Energy for replicate  12 =      -26.6796
+Energy for replicate  13 =      -28.1903
+Energy for replicate  14 =      -25.6883
+Energy for replicate  15 =      -30.0810
+Energy for replicate  16 =      -24.2542
+Energy for replicate  17 =      -25.0340
+Energy for replicate  18 =      -27.4306
+Energy for replicate  19 =      -25.3172
+Energy for replicate  20 =      -25.2416
+Energy for replicate  21 =      -26.7110
+Energy for replicate  22 =      -24.2582
+Energy for replicate  23 =      -29.0983
+Energy for replicate  24 =      -27.4262
+Energy for replicate  25 =      -24.9529
+Energy for replicate  26 =      -25.8614
+Energy for replicate  27 =      -26.2246
+Energy for replicate  28 =      -29.1813
+Energy for replicate  29 =      -27.5677
+Energy for replicate  30 =      -26.4817
+Energy for replicate  31 =      -24.7654
+Energy for replicate  32 =      -34.1978
+Total Energy of replicates =     -874.1275
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+ NSTEP =    16500   TIME(PS) =       8.250  TEMP(K) =   150.51  PRESS =     0.0
+ Etot   =       -18.0521  EKtot   =         9.8701  EPtot      =       -27.9221
+ BOND   =         4.0276  ANGLE   =         5.6326  DIHED      =         9.1690
+ 1-4 NB =         3.3801  1-4 EEL =        44.5413  VDWAALS    =        -1.9112
+ EELEC  =       -75.2664  EGB     =       -17.4953  RESTRAINT  =         0.0000
+NEB replicate breakdown:
+Energy for replicate   1 =      -36.0245
+Energy for replicate   2 =      -26.9797
+Energy for replicate   3 =      -27.9221
+Energy for replicate   4 =      -29.4248
+Energy for replicate   5 =      -27.1956
+Energy for replicate   6 =      -27.5317
+Energy for replicate   7 =      -25.4325
+Energy for replicate   8 =      -27.8581
+Energy for replicate   9 =      -26.2886
+Energy for replicate  10 =      -27.8249
+Energy for replicate  11 =      -29.7767
+Energy for replicate  12 =      -28.6430
+Energy for replicate  13 =      -26.0419
+Energy for replicate  14 =      -26.6718
+Energy for replicate  15 =      -26.0133
+Energy for replicate  16 =      -25.3906
+Energy for replicate  17 =      -21.1299
+Energy for replicate  18 =      -24.5603
+Energy for replicate  19 =      -27.2504
+Energy for replicate  20 =      -26.0155
+Energy for replicate  21 =      -25.2557
+Energy for replicate  22 =      -28.5866
+Energy for replicate  23 =      -28.4579
+Energy for replicate  24 =      -23.7292
+Energy for replicate  25 =      -26.1120
+Energy for replicate  26 =      -28.9826
+Energy for replicate  27 =      -26.2971
+Energy for replicate  28 =      -26.4894
+Energy for replicate  29 =      -23.2001
+Energy for replicate  30 =      -24.8635
+Energy for replicate  31 =      -24.1151
+Energy for replicate  32 =      -34.1978
+Total Energy of replicates =     -864.2631
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+ NSTEP =    17000   TIME(PS) =       8.500  TEMP(K) =   209.37  PRESS =     0.0
+ Etot   =       -15.3506  EKtot   =        13.7297  EPtot      =       -29.0803
+ BOND   =         2.2035  ANGLE   =         5.6022  DIHED      =        10.2194
+ 1-4 NB =         2.6892  1-4 EEL =        43.7963  VDWAALS    =        -1.8662
+ EELEC  =       -73.9019  EGB     =       -17.8230  RESTRAINT  =         0.0000
+NEB replicate breakdown:
+Energy for replicate   1 =      -36.0245
+Energy for replicate   2 =      -23.9996
+Energy for replicate   3 =      -29.0803
+Energy for replicate   4 =      -26.3103
+Energy for replicate   5 =      -26.8932
+Energy for replicate   6 =      -26.3403
+Energy for replicate   7 =      -27.3472
+Energy for replicate   8 =      -23.5314
+Energy for replicate   9 =      -22.7161
+Energy for replicate  10 =      -26.3944
+Energy for replicate  11 =      -27.4983
+Energy for replicate  12 =      -26.9181
+Energy for replicate  13 =      -24.3195
+Energy for replicate  14 =      -28.4324
+Energy for replicate  15 =      -28.8036
+Energy for replicate  16 =      -27.2621
+Energy for replicate  17 =      -20.5994
+Energy for replicate  18 =      -27.2613
+Energy for replicate  19 =      -28.6075
+Energy for replicate  20 =      -27.2024
+Energy for replicate  21 =      -26.2542
+Energy for replicate  22 =      -25.6254
+Energy for replicate  23 =      -27.3155
+Energy for replicate  24 =      -26.9235
+Energy for replicate  25 =      -29.0142
+Energy for replicate  26 =      -25.9103
+Energy for replicate  27 =      -26.6114
+Energy for replicate  28 =      -29.6286
+Energy for replicate  29 =      -27.9113
+Energy for replicate  30 =      -24.3084
+Energy for replicate  31 =      -26.7185
+Energy for replicate  32 =      -34.1978
+Total Energy of replicates =     -865.9611
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+ NSTEP =    17500   TIME(PS) =       8.750  TEMP(K) =   194.32  PRESS =     0.0
+ Etot   =       -13.9773  EKtot   =        12.7429  EPtot      =       -26.7202
+ BOND   =         4.5641  ANGLE   =         4.9653  DIHED      =        10.8074
+ 1-4 NB =         2.5515  1-4 EEL =        45.0118  VDWAALS    =        -1.7314
+ EELEC  =       -74.8244  EGB     =       -18.0645  RESTRAINT  =         0.0000
+NEB replicate breakdown:
+Energy for replicate   1 =      -36.0245
+Energy for replicate   2 =      -28.7990
+Energy for replicate   3 =      -26.7202
+Energy for replicate   4 =      -27.8208
+Energy for replicate   5 =      -28.1986
+Energy for replicate   6 =      -29.4445
+Energy for replicate   7 =      -26.4068
+Energy for replicate   8 =      -28.3537
+Energy for replicate   9 =      -26.3641
+Energy for replicate  10 =      -27.8886
+Energy for replicate  11 =      -26.2212
+Energy for replicate  12 =      -25.6687
+Energy for replicate  13 =      -28.5525
+Energy for replicate  14 =      -26.4768
+Energy for replicate  15 =      -26.9147
+Energy for replicate  16 =      -28.0239
+Energy for replicate  17 =      -25.3128
+Energy for replicate  18 =      -27.5741
+Energy for replicate  19 =      -25.1933
+Energy for replicate  20 =      -25.0779
+Energy for replicate  21 =      -22.6791
+Energy for replicate  22 =      -23.6352
+Energy for replicate  23 =      -23.1179
+Energy for replicate  24 =      -27.5905
+Energy for replicate  25 =      -26.1349
+Energy for replicate  26 =      -24.1915
+Energy for replicate  27 =      -24.8451
+Energy for replicate  28 =      -25.4372
+Energy for replicate  29 =      -24.4988
+Energy for replicate  30 =      -26.3034
+Energy for replicate  31 =      -26.8390
+Energy for replicate  32 =      -34.1978
+Total Energy of replicates =     -860.5069
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+ NSTEP =    18000   TIME(PS) =       9.000  TEMP(K) =   126.73  PRESS =     0.0
+ Etot   =       -19.3986  EKtot   =         8.3107  EPtot      =       -27.7093
+ BOND   =         3.1156  ANGLE   =         4.7557  DIHED      =        10.3788
+ 1-4 NB =         3.8823  1-4 EEL =        46.6589  VDWAALS    =        -1.4885
+ EELEC  =       -77.8563  EGB     =       -17.1557  RESTRAINT  =         0.0000
+NEB replicate breakdown:
+Energy for replicate   1 =      -36.0245
+Energy for replicate   2 =      -28.4749
+Energy for replicate   3 =      -27.7093
+Energy for replicate   4 =      -26.9505
+Energy for replicate   5 =      -29.7666
+Energy for replicate   6 =      -28.1750
+Energy for replicate   7 =      -29.0797
+Energy for replicate   8 =      -27.6208
+Energy for replicate   9 =      -27.7246
+Energy for replicate  10 =      -30.3263
+Energy for replicate  11 =      -28.3056
+Energy for replicate  12 =      -26.7140
+Energy for replicate  13 =      -26.7543
+Energy for replicate  14 =      -26.0691
+Energy for replicate  15 =      -29.3524
+Energy for replicate  16 =      -26.9783
+Energy for replicate  17 =      -23.6430
+Energy for replicate  18 =      -22.2677
+Energy for replicate  19 =      -26.7452
+Energy for replicate  20 =      -23.6339
+Energy for replicate  21 =      -26.9377
+Energy for replicate  22 =      -24.2843
+Energy for replicate  23 =      -24.6151
+Energy for replicate  24 =      -22.4504
+Energy for replicate  25 =      -23.9266
+Energy for replicate  26 =      -22.6606
+Energy for replicate  27 =      -26.8061
+Energy for replicate  28 =      -26.8511
+Energy for replicate  29 =      -26.2877
+Energy for replicate  30 =      -19.7475
+Energy for replicate  31 =      -26.5285
+Energy for replicate  32 =      -34.1978
+Total Energy of replicates =     -857.6092
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+ NSTEP =    18500   TIME(PS) =       9.250  TEMP(K) =   105.10  PRESS =     0.0
+ Etot   =       -19.3658  EKtot   =         6.8921  EPtot      =       -26.2579
+ BOND   =         2.2653  ANGLE   =         7.5316  DIHED      =        11.0986
+ 1-4 NB =         3.0571  1-4 EEL =        44.9029  VDWAALS    =        -1.6562
+ EELEC  =       -76.4795  EGB     =       -16.9777  RESTRAINT  =         0.0000
+NEB replicate breakdown:
+Energy for replicate   1 =      -36.0245
+Energy for replicate   2 =      -25.3755
+Energy for replicate   3 =      -26.2579
+Energy for replicate   4 =      -26.5333
+Energy for replicate   5 =      -28.9501
+Energy for replicate   6 =      -25.1722
+Energy for replicate   7 =      -29.1725
+Energy for replicate   8 =      -28.9258
+Energy for replicate   9 =      -26.7284
+Energy for replicate  10 =      -26.5160
+Energy for replicate  11 =      -27.7825
+Energy for replicate  12 =      -28.6228
+Energy for replicate  13 =      -24.3407
+Energy for replicate  14 =      -28.1377
+Energy for replicate  15 =      -25.8987
+Energy for replicate  16 =      -25.0081
+Energy for replicate  17 =      -23.5852
+Energy for replicate  18 =      -23.2773
+Energy for replicate  19 =      -27.5757
+Energy for replicate  20 =      -24.6051
+Energy for replicate  21 =      -24.6113
+Energy for replicate  22 =      -27.9625
+Energy for replicate  23 =      -25.6658
+Energy for replicate  24 =      -23.3419
+Energy for replicate  25 =      -23.0126
+Energy for replicate  26 =      -25.7433
+Energy for replicate  27 =      -26.0491
+Energy for replicate  28 =      -25.5944
+Energy for replicate  29 =      -25.1963
+Energy for replicate  30 =      -24.8272
+Energy for replicate  31 =      -23.4560
+Energy for replicate  32 =      -34.1978
+Total Energy of replicates =     -848.1483
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+ NSTEP =    19000   TIME(PS) =       9.500  TEMP(K) =   163.15  PRESS =     0.0
+ Etot   =       -14.2466  EKtot   =        10.6989  EPtot      =       -24.9456
+ BOND   =         5.5193  ANGLE   =         6.5338  DIHED      =        10.4907
+ 1-4 NB =         2.4039  1-4 EEL =        43.5075  VDWAALS    =        -1.5977
+ EELEC  =       -74.2002  EGB     =       -17.6028  RESTRAINT  =         0.0000
+NEB replicate breakdown:
+Energy for replicate   1 =      -36.0245
+Energy for replicate   2 =      -22.3437
+Energy for replicate   3 =      -24.9456
+Energy for replicate   4 =      -26.9283
+Energy for replicate   5 =      -26.5583
+Energy for replicate   6 =      -25.8990
+Energy for replicate   7 =      -29.4487
+Energy for replicate   8 =      -26.5950
+Energy for replicate   9 =      -27.1548
+Energy for replicate  10 =      -25.4041
+Energy for replicate  11 =      -25.0498
+Energy for replicate  12 =      -26.4039
+Energy for replicate  13 =      -25.3852
+Energy for replicate  14 =      -27.9374
+Energy for replicate  15 =      -25.5141
+Energy for replicate  16 =      -26.3763
+Energy for replicate  17 =      -22.8607
+Energy for replicate  18 =      -26.4986
+Energy for replicate  19 =      -25.9429
+Energy for replicate  20 =      -25.3419
+Energy for replicate  21 =      -22.4361
+Energy for replicate  22 =      -24.4076
+Energy for replicate  23 =      -26.7707
+Energy for replicate  24 =      -26.3630
+Energy for replicate  25 =      -23.3464
+Energy for replicate  26 =      -23.5758
+Energy for replicate  27 =      -25.0701
+Energy for replicate  28 =      -23.8074
+Energy for replicate  29 =      -27.2960
+Energy for replicate  30 =      -27.1641
+Energy for replicate  31 =      -20.4831
+Energy for replicate  32 =      -34.1978
+Total Energy of replicates =     -833.5310
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+ NSTEP =    19500   TIME(PS) =       9.750  TEMP(K) =   150.73  PRESS =     0.0
+ Etot   =       -17.3492  EKtot   =         9.8847  EPtot      =       -27.2339
+ BOND   =         2.8593  ANGLE   =         5.9593  DIHED      =        11.3665
+ 1-4 NB =         2.7736  1-4 EEL =        43.9886  VDWAALS    =        -1.8088
+ EELEC  =       -74.6484  EGB     =       -17.7241  RESTRAINT  =         0.0000
+NEB replicate breakdown:
+Energy for replicate   1 =      -36.0245
+Energy for replicate   2 =      -22.8715
+Energy for replicate   3 =      -27.2339
+Energy for replicate   4 =      -24.4045
+Energy for replicate   5 =      -27.8708
+Energy for replicate   6 =      -23.9399
+Energy for replicate   7 =      -26.4635
+Energy for replicate   8 =      -25.9009
+Energy for replicate   9 =      -28.3373
+Energy for replicate  10 =      -27.9235
+Energy for replicate  11 =      -25.6227
+Energy for replicate  12 =      -24.6645
+Energy for replicate  13 =      -26.1156
+Energy for replicate  14 =      -27.8301
+Energy for replicate  15 =      -24.4220
+Energy for replicate  16 =      -23.1060
+Energy for replicate  17 =      -23.0300
+Energy for replicate  18 =      -22.5114
+Energy for replicate  19 =      -24.1979
+Energy for replicate  20 =      -25.2680
+Energy for replicate  21 =      -21.3162
+Energy for replicate  22 =      -26.3224
+Energy for replicate  23 =      -25.6081
+Energy for replicate  24 =      -22.0131
+Energy for replicate  25 =      -22.5917
+Energy for replicate  26 =      -20.7854
+Energy for replicate  27 =      -24.2225
+Energy for replicate  28 =      -22.0307
+Energy for replicate  29 =      -25.7085
+Energy for replicate  30 =      -24.5200
+Energy for replicate  31 =      -22.4121
+Energy for replicate  32 =      -34.1978
+Total Energy of replicates =     -809.4674
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+ NSTEP =    20000   TIME(PS) =      10.000  TEMP(K) =   207.95  PRESS =     0.0
+ Etot   =        -9.9304  EKtot   =        13.6369  EPtot      =       -23.5674
+ BOND   =         4.2897  ANGLE   =         7.2604  DIHED      =        11.5787
+ 1-4 NB =         3.1780  1-4 EEL =        45.1389  VDWAALS    =        -1.5819
+ EELEC  =       -75.9324  EGB     =       -17.4989  RESTRAINT  =         0.0000
+NEB replicate breakdown:
+Energy for replicate   1 =      -36.0245
+Energy for replicate   2 =      -24.8247
+Energy for replicate   3 =      -23.5674
+Energy for replicate   4 =      -23.3050
+Energy for replicate   5 =      -26.7730
+Energy for replicate   6 =      -26.8501
+Energy for replicate   7 =      -26.7988
+Energy for replicate   8 =      -22.7341
+Energy for replicate   9 =      -25.0175
+Energy for replicate  10 =      -26.3276
+Energy for replicate  11 =      -26.8258
+Energy for replicate  12 =      -26.4414
+Energy for replicate  13 =      -26.4517
+Energy for replicate  14 =      -25.6740
+Energy for replicate  15 =      -26.0525
+Energy for replicate  16 =      -23.8018
+Energy for replicate  17 =      -21.7111
+Energy for replicate  18 =      -23.4426
+Energy for replicate  19 =      -22.9551
+Energy for replicate  20 =      -27.4546
+Energy for replicate  21 =      -24.0927
+Energy for replicate  22 =      -20.0723
+Energy for replicate  23 =      -24.1942
+Energy for replicate  24 =      -22.6379
+Energy for replicate  25 =      -24.3704
+Energy for replicate  26 =      -26.2313
+Energy for replicate  27 =      -26.3611
+Energy for replicate  28 =      -20.9304
+Energy for replicate  29 =      -24.9717
+Energy for replicate  30 =      -25.4484
+Energy for replicate  31 =      -21.3216
+Energy for replicate  32 =      -34.1978
+Total Energy of replicates =     -807.8630
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+ NSTEP =    20500   TIME(PS) =      10.250  TEMP(K) =   141.87  PRESS =     0.0
+ Etot   =       -14.2836  EKtot   =         9.3034  EPtot      =       -23.5870
+ BOND   =         4.4288  ANGLE   =         5.0287  DIHED      =        12.6597
+ 1-4 NB =         3.5466  1-4 EEL =        44.7060  VDWAALS    =        -1.2171
+ EELEC  =       -75.0262  EGB     =       -17.7134  RESTRAINT  =         0.0000
+NEB replicate breakdown:
+Energy for replicate   1 =      -36.0245
+Energy for replicate   2 =      -22.7019
+Energy for replicate   3 =      -23.5870
+Energy for replicate   4 =      -25.2606
+Energy for replicate   5 =      -25.4723
+Energy for replicate   6 =      -25.0898
+Energy for replicate   7 =      -26.3447
+Energy for replicate   8 =      -26.3910
+Energy for replicate   9 =      -29.0995
+Energy for replicate  10 =      -27.6472
+Energy for replicate  11 =      -25.3021
+Energy for replicate  12 =      -25.5382
+Energy for replicate  13 =      -23.1501
+Energy for replicate  14 =      -26.6039
+Energy for replicate  15 =      -26.6139
+Energy for replicate  16 =      -26.2410
+Energy for replicate  17 =      -23.6291
+Energy for replicate  18 =      -24.6409
+Energy for replicate  19 =      -22.9069
+Energy for replicate  20 =      -24.5710
+Energy for replicate  21 =      -23.4328
+Energy for replicate  22 =      -24.3934
+Energy for replicate  23 =      -23.8528
+Energy for replicate  24 =      -23.3477
+Energy for replicate  25 =      -22.8322
+Energy for replicate  26 =      -23.3389
+Energy for replicate  27 =      -25.2572
+Energy for replicate  28 =      -19.2113
+Energy for replicate  29 =      -23.7339
+Energy for replicate  30 =      -25.3438
+Energy for replicate  31 =      -24.5394
+Energy for replicate  32 =      -34.1978
+Total Energy of replicates =     -810.2968
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+ NSTEP =    21000   TIME(PS) =      10.500  TEMP(K) =   195.68  PRESS =     0.0
+ Etot   =       -12.2792  EKtot   =        12.8323  EPtot      =       -25.1115
+ BOND   =         2.4486  ANGLE   =         6.3582  DIHED      =        11.1026
+ 1-4 NB =         4.1448  1-4 EEL =        46.2216  VDWAALS    =        -1.5575
+ EELEC  =       -76.5961  EGB     =       -17.2338  RESTRAINT  =         0.0000
+NEB replicate breakdown:
+Energy for replicate   1 =      -36.0245
+Energy for replicate   2 =      -21.8141
+Energy for replicate   3 =      -25.1115
+Energy for replicate   4 =      -21.2551
+Energy for replicate   5 =      -27.4316
+Energy for replicate   6 =      -19.5977
+Energy for replicate   7 =      -27.5556
+Energy for replicate   8 =      -23.9272
+Energy for replicate   9 =      -24.4043
+Energy for replicate  10 =      -27.1469
+Energy for replicate  11 =      -27.5749
+Energy for replicate  12 =      -25.5069
+Energy for replicate  13 =      -26.5176
+Energy for replicate  14 =      -25.9814
+Energy for replicate  15 =      -22.2887
+Energy for replicate  16 =      -23.2822
+Energy for replicate  17 =      -24.7411
+Energy for replicate  18 =      -19.7956
+Energy for replicate  19 =      -25.3798
+Energy for replicate  20 =      -23.3436
+Energy for replicate  21 =      -21.4279
+Energy for replicate  22 =      -20.5464
+Energy for replicate  23 =      -25.2462
+Energy for replicate  24 =      -19.2291
+Energy for replicate  25 =      -24.1909
+Energy for replicate  26 =      -20.4147
+Energy for replicate  27 =      -20.4573
+Energy for replicate  28 =      -25.0336
+Energy for replicate  29 =      -25.2549
+Energy for replicate  30 =      -23.3571
+Energy for replicate  31 =      -25.4829
+Energy for replicate  32 =      -34.1978
+Total Energy of replicates =     -783.5193
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+ NSTEP =    21500   TIME(PS) =      10.750  TEMP(K) =   145.41  PRESS =     0.0
+ Etot   =       -13.7272  EKtot   =         9.5356  EPtot      =       -23.2628
+ BOND   =         4.6637  ANGLE   =         6.0569  DIHED      =        12.2324
+ 1-4 NB =         3.2221  1-4 EEL =        45.5174  VDWAALS    =        -2.0343
+ EELEC  =       -74.0720  EGB     =       -18.8490  RESTRAINT  =         0.0000
+NEB replicate breakdown:
+Energy for replicate   1 =      -36.0245
+Energy for replicate   2 =      -24.6366
+Energy for replicate   3 =      -23.2628
+Energy for replicate   4 =      -23.5329
+Energy for replicate   5 =      -23.6999
+Energy for replicate   6 =      -23.9121
+Energy for replicate   7 =      -27.8711
+Energy for replicate   8 =      -25.9409
+Energy for replicate   9 =      -25.7519
+Energy for replicate  10 =      -27.6547
+Energy for replicate  11 =      -21.8304
+Energy for replicate  12 =      -23.4158
+Energy for replicate  13 =      -22.8653
+Energy for replicate  14 =      -27.5776
+Energy for replicate  15 =      -25.1509
+Energy for replicate  16 =      -21.3740
+Energy for replicate  17 =      -22.7569
+Energy for replicate  18 =      -22.3138
+Energy for replicate  19 =      -22.1553
+Energy for replicate  20 =      -26.1638
+Energy for replicate  21 =      -24.2135
+Energy for replicate  22 =      -20.4911
+Energy for replicate  23 =      -21.4024
+Energy for replicate  24 =      -21.8555
+Energy for replicate  25 =      -23.5009
+Energy for replicate  26 =      -23.1125
+Energy for replicate  27 =      -25.0418
+Energy for replicate  28 =      -20.3761
+Energy for replicate  29 =      -23.0828
+Energy for replicate  30 =      -22.4114
+Energy for replicate  31 =      -20.2814
+Energy for replicate  32 =      -34.1978
+Total Energy of replicates =     -777.8584
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+ NSTEP =    22000   TIME(PS) =      11.000  TEMP(K) =   182.32  PRESS =     0.0
+ Etot   =       -10.7087  EKtot   =        11.9563  EPtot      =       -22.6650
+ BOND   =         2.6042  ANGLE   =         7.0494  DIHED      =        13.6160
+ 1-4 NB =         3.8497  1-4 EEL =        44.0931  VDWAALS    =        -1.7597
+ EELEC  =       -74.5433  EGB     =       -17.5744  RESTRAINT  =         0.0000
+NEB replicate breakdown:
+Energy for replicate   1 =      -36.0245
+Energy for replicate   2 =      -27.5125
+Energy for replicate   3 =      -22.6650
+Energy for replicate   4 =      -26.2551
+Energy for replicate   5 =      -24.1562
+Energy for replicate   6 =      -24.0192
+Energy for replicate   7 =      -25.5832
+Energy for replicate   8 =      -24.0223
+Energy for replicate   9 =      -25.1432
+Energy for replicate  10 =      -27.3308
+Energy for replicate  11 =      -24.4211
+Energy for replicate  12 =      -22.8591
+Energy for replicate  13 =      -23.5837
+Energy for replicate  14 =      -22.9717
+Energy for replicate  15 =      -26.0669
+Energy for replicate  16 =      -22.3786
+Energy for replicate  17 =      -24.3184
+Energy for replicate  18 =      -21.4514
+Energy for replicate  19 =      -20.1838
+Energy for replicate  20 =      -18.4456
+Energy for replicate  21 =      -25.7880
+Energy for replicate  22 =      -23.0961
+Energy for replicate  23 =      -25.2027
+Energy for replicate  24 =      -21.5329
+Energy for replicate  25 =      -23.0489
+Energy for replicate  26 =      -20.3400
+Energy for replicate  27 =      -20.7700
+Energy for replicate  28 =      -22.2011
+Energy for replicate  29 =      -21.7337
+Energy for replicate  30 =      -24.6355
+Energy for replicate  31 =      -25.6425
+Energy for replicate  32 =      -34.1978
+Total Energy of replicates =     -777.5812
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+ NSTEP =    22500   TIME(PS) =      11.250  TEMP(K) =   138.26  PRESS =     0.0
+ Etot   =       -18.9780  EKtot   =         9.0669  EPtot      =       -28.0449
+ BOND   =         3.0798  ANGLE   =         4.5709  DIHED      =        10.2738
+ 1-4 NB =         3.9745  1-4 EEL =        46.1017  VDWAALS    =        -1.6019
+ EELEC  =       -76.7930  EGB     =       -17.6505  RESTRAINT  =         0.0000
+NEB replicate breakdown:
+Energy for replicate   1 =      -36.0245
+Energy for replicate   2 =      -24.5434
+Energy for replicate   3 =      -28.0449
+Energy for replicate   4 =      -23.1400
+Energy for replicate   5 =      -27.1346
+Energy for replicate   6 =      -27.3667
+Energy for replicate   7 =      -28.5249
+Energy for replicate   8 =      -26.1182
+Energy for replicate   9 =      -26.1025
+Energy for replicate  10 =      -25.9936
+Energy for replicate  11 =      -22.7352
+Energy for replicate  12 =      -22.7824
+Energy for replicate  13 =      -23.6362
+Energy for replicate  14 =      -23.4987
+Energy for replicate  15 =      -26.4351
+Energy for replicate  16 =      -20.2585
+Energy for replicate  17 =      -26.4098
+Energy for replicate  18 =      -22.8485
+Energy for replicate  19 =      -23.9513
+Energy for replicate  20 =      -21.2832
+Energy for replicate  21 =      -23.9403
+Energy for replicate  22 =      -23.6984
+Energy for replicate  23 =      -22.8039
+Energy for replicate  24 =      -22.8593
+Energy for replicate  25 =      -22.2905
+Energy for replicate  26 =      -24.8737
+Energy for replicate  27 =      -23.2043
+Energy for replicate  28 =      -22.7315
+Energy for replicate  29 =      -20.0958
+Energy for replicate  30 =      -23.9736
+Energy for replicate  31 =      -21.7348
+Energy for replicate  32 =      -34.1978
+Total Energy of replicates =     -793.2362
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+ NSTEP =    23000   TIME(PS) =      11.500  TEMP(K) =   210.93  PRESS =     0.0
+ Etot   =        -8.5425  EKtot   =        13.8321  EPtot      =       -22.3746
+ BOND   =         2.8655  ANGLE   =         9.6868  DIHED      =        11.7406
+ 1-4 NB =         3.4923  1-4 EEL =        44.3503  VDWAALS    =        -1.5573
+ EELEC  =       -74.9629  EGB     =       -17.9899  RESTRAINT  =         0.0000
+NEB replicate breakdown:
+Energy for replicate   1 =      -36.0245
+Energy for replicate   2 =      -23.8254
+Energy for replicate   3 =      -22.3746
+Energy for replicate   4 =      -18.6070
+Energy for replicate   5 =      -24.5297
+Energy for replicate   6 =      -23.6356
+Energy for replicate   7 =      -22.8594
+Energy for replicate   8 =      -24.7193
+Energy for replicate   9 =      -26.8542
+Energy for replicate  10 =      -26.5549
+Energy for replicate  11 =      -22.9033
+Energy for replicate  12 =      -25.6375
+Energy for replicate  13 =      -27.1735
+Energy for replicate  14 =      -22.9776
+Energy for replicate  15 =      -25.5251
+Energy for replicate  16 =      -23.0830
+Energy for replicate  17 =      -23.9962
+Energy for replicate  18 =      -13.8410
+Energy for replicate  19 =      -21.9266
+Energy for replicate  20 =      -21.9996
+Energy for replicate  21 =      -24.2002
+Energy for replicate  22 =      -19.1195
+Energy for replicate  23 =      -24.5208
+Energy for replicate  24 =      -15.6033
+Energy for replicate  25 =      -23.2452
+Energy for replicate  26 =      -17.7838
+Energy for replicate  27 =      -22.1523
+Energy for replicate  28 =      -25.4888
+Energy for replicate  29 =      -22.5197
+Energy for replicate  30 =      -24.7373
+Energy for replicate  31 =      -22.4100
+Energy for replicate  32 =      -34.1978
+Total Energy of replicates =     -755.0269
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+ NSTEP =    23500   TIME(PS) =      11.750  TEMP(K) =   190.39  PRESS =     0.0
+ Etot   =       -12.3491  EKtot   =        12.4854  EPtot      =       -24.8346
+ BOND   =         2.9575  ANGLE   =         6.5683  DIHED      =        10.4145
+ 1-4 NB =         3.9674  1-4 EEL =        46.4238  VDWAALS    =        -1.5089
+ EELEC  =       -76.3570  EGB     =       -17.3000  RESTRAINT  =         0.0000
+NEB replicate breakdown:
+Energy for replicate   1 =      -36.0245
+Energy for replicate   2 =      -20.9567
+Energy for replicate   3 =      -24.8346
+Energy for replicate   4 =      -23.6642
+Energy for replicate   5 =      -23.2147
+Energy for replicate   6 =      -22.4725
+Energy for replicate   7 =      -27.7759
+Energy for replicate   8 =      -22.9215
+Energy for replicate   9 =      -21.3296
+Energy for replicate  10 =      -24.8362
+Energy for replicate  11 =      -24.2458
+Energy for replicate  12 =      -27.1875
+Energy for replicate  13 =      -21.6129
+Energy for replicate  14 =      -23.8816
+Energy for replicate  15 =      -27.4646
+Energy for replicate  16 =      -24.2372
+Energy for replicate  17 =      -22.8517
+Energy for replicate  18 =      -24.4987
+Energy for replicate  19 =      -22.4435
+Energy for replicate  20 =      -20.8047
+Energy for replicate  21 =      -23.0498
+Energy for replicate  22 =      -23.3537
+Energy for replicate  23 =      -24.5858
+Energy for replicate  24 =      -24.5308
+Energy for replicate  25 =      -22.2120
+Energy for replicate  26 =      -21.1839
+Energy for replicate  27 =      -23.7819
+Energy for replicate  28 =      -23.8937
+Energy for replicate  29 =      -18.4842
+Energy for replicate  30 =      -23.1573
+Energy for replicate  31 =      -23.3483
+Energy for replicate  32 =      -34.1978
+Total Energy of replicates =     -773.0375
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+ NSTEP =    24000   TIME(PS) =      12.000  TEMP(K) =   274.33  PRESS =     0.0
+ Etot   =        -1.6312  EKtot   =        17.9899  EPtot      =       -19.6211
+ BOND   =         6.0271  ANGLE   =        10.6902  DIHED      =        11.0136
+ 1-4 NB =         3.2449  1-4 EEL =        43.7528  VDWAALS    =        -1.5375
+ EELEC  =       -75.8768  EGB     =       -16.9354  RESTRAINT  =         0.0000
+NEB replicate breakdown:
+Energy for replicate   1 =      -36.0245
+Energy for replicate   2 =      -26.2616
+Energy for replicate   3 =      -19.6211
+Energy for replicate   4 =      -27.6976
+Energy for replicate   5 =      -25.0450
+Energy for replicate   6 =      -23.2956
+Energy for replicate   7 =      -27.0885
+Energy for replicate   8 =      -23.4669
+Energy for replicate   9 =      -24.0221
+Energy for replicate  10 =      -19.5597
+Energy for replicate  11 =      -24.6127
+Energy for replicate  12 =      -22.9414
+Energy for replicate  13 =      -23.6482
+Energy for replicate  14 =      -24.9857
+Energy for replicate  15 =      -21.9759
+Energy for replicate  16 =      -24.0439
+Energy for replicate  17 =      -22.8968
+Energy for replicate  18 =      -25.9210
+Energy for replicate  19 =      -22.4166
+Energy for replicate  20 =      -24.2148
+Energy for replicate  21 =      -21.4319
+Energy for replicate  22 =      -21.2240
+Energy for replicate  23 =      -19.1967
+Energy for replicate  24 =      -26.1153
+Energy for replicate  25 =      -21.3130
+Energy for replicate  26 =      -20.6864
+Energy for replicate  27 =      -19.6059
+Energy for replicate  28 =      -22.5382
+Energy for replicate  29 =      -21.5359
+Energy for replicate  30 =      -24.7396
+Energy for replicate  31 =      -23.2013
+Energy for replicate  32 =      -34.1978
+Total Energy of replicates =     -765.5256
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+ NSTEP =    24500   TIME(PS) =      12.250  TEMP(K) =   236.10  PRESS =     0.0
+ Etot   =        -4.6778  EKtot   =        15.4826  EPtot      =       -20.1604
+ BOND   =         8.0305  ANGLE   =         7.7573  DIHED      =        10.7567
+ 1-4 NB =         3.0129  1-4 EEL =        46.5150  VDWAALS    =        -0.9489
+ EELEC  =       -77.5274  EGB     =       -17.7567  RESTRAINT  =         0.0000
+NEB replicate breakdown:
+Energy for replicate   1 =      -36.0245
+Energy for replicate   2 =      -20.1536
+Energy for replicate   3 =      -20.1604
+Energy for replicate   4 =      -22.6104
+Energy for replicate   5 =      -21.3941
+Energy for replicate   6 =      -23.6223
+Energy for replicate   7 =      -22.4179
+Energy for replicate   8 =      -23.6764
+Energy for replicate   9 =      -22.4908
+Energy for replicate  10 =      -22.6740
+Energy for replicate  11 =      -24.8032
+Energy for replicate  12 =      -25.8967
+Energy for replicate  13 =      -25.3701
+Energy for replicate  14 =      -24.5006
+Energy for replicate  15 =      -23.3688
+Energy for replicate  16 =      -23.1649
+Energy for replicate  17 =      -21.0082
+Energy for replicate  18 =      -22.1514
+Energy for replicate  19 =      -18.3523
+Energy for replicate  20 =      -24.9085
+Energy for replicate  21 =      -22.7193
+Energy for replicate  22 =      -19.3344
+Energy for replicate  23 =      -25.6391
+Energy for replicate  24 =      -22.2938
+Energy for replicate  25 =      -21.6461
+Energy for replicate  26 =      -21.4404
+Energy for replicate  27 =      -23.8717
+Energy for replicate  28 =      -19.6460
+Energy for replicate  29 =      -22.3591
+Energy for replicate  30 =      -17.5243
+Energy for replicate  31 =      -22.0352
+Energy for replicate  32 =      -34.1978
+Total Energy of replicates =     -741.4563
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+ NSTEP =    25000   TIME(PS) =      12.500  TEMP(K) =   211.35  PRESS =     0.0
+ Etot   =        -9.3222  EKtot   =        13.8598  EPtot      =       -23.1820
+ BOND   =         3.6709  ANGLE   =         8.4486  DIHED      =         9.9356
+ 1-4 NB =         3.4819  1-4 EEL =        46.3586  VDWAALS    =        -1.2840
+ EELEC  =       -77.8711  EGB     =       -15.9223  RESTRAINT  =         0.0000
+NEB replicate breakdown:
+Energy for replicate   1 =      -36.0245
+Energy for replicate   2 =      -20.8628
+Energy for replicate   3 =      -23.1820
+Energy for replicate   4 =      -23.8756
+Energy for replicate   5 =      -22.9673
+Energy for replicate   6 =      -24.5168
+Energy for replicate   7 =      -27.4159
+Energy for replicate   8 =      -19.3152
+Energy for replicate   9 =      -17.0348
+Energy for replicate  10 =      -23.5074
+Energy for replicate  11 =      -24.3404
+Energy for replicate  12 =      -24.4206
+Energy for replicate  13 =      -21.8873
+Energy for replicate  14 =      -25.4112
+Energy for replicate  15 =      -22.3851
+Energy for replicate  16 =      -22.3325
+Energy for replicate  17 =      -20.8228
+Energy for replicate  18 =      -20.9713
+Energy for replicate  19 =      -21.9782
+Energy for replicate  20 =      -21.0303
+Energy for replicate  21 =      -20.6518
+Energy for replicate  22 =      -24.0421
+Energy for replicate  23 =      -23.7189
+Energy for replicate  24 =      -22.2569
+Energy for replicate  25 =      -20.7269
+Energy for replicate  26 =      -21.6878
+Energy for replicate  27 =      -23.9298
+Energy for replicate  28 =      -19.3778
+Energy for replicate  29 =      -23.0778
+Energy for replicate  30 =      -20.1208
+Energy for replicate  31 =      -19.9953
+Energy for replicate  32 =      -34.1978
+Total Energy of replicates =     -738.0657
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+ NSTEP =    25500   TIME(PS) =      12.750  TEMP(K) =   161.06  PRESS =     0.0
+ Etot   =       -11.8880  EKtot   =        10.5617  EPtot      =       -22.4496
+ BOND   =         4.6378  ANGLE   =         6.0891  DIHED      =         9.8190
+ 1-4 NB =         4.8450  1-4 EEL =        48.6816  VDWAALS    =        -0.9776
+ EELEC  =       -77.9261  EGB     =       -17.6186  RESTRAINT  =         0.0000
+NEB replicate breakdown:
+Energy for replicate   1 =      -36.0245
+Energy for replicate   2 =      -24.5321
+Energy for replicate   3 =      -22.4496
+Energy for replicate   4 =      -24.0243
+Energy for replicate   5 =      -25.0476
+Energy for replicate   6 =      -23.9056
+Energy for replicate   7 =      -20.0501
+Energy for replicate   8 =      -23.6607
+Energy for replicate   9 =      -20.4967
+Energy for replicate  10 =      -24.2033
+Energy for replicate  11 =      -21.1943
+Energy for replicate  12 =      -23.0083
+Energy for replicate  13 =      -23.1349
+Energy for replicate  14 =      -24.8475
+Energy for replicate  15 =      -22.7931
+Energy for replicate  16 =      -24.8372
+Energy for replicate  17 =      -19.9252
+Energy for replicate  18 =      -22.8482
+Energy for replicate  19 =      -23.2112
+Energy for replicate  20 =      -21.2530
+Energy for replicate  21 =      -25.4393
+Energy for replicate  22 =      -24.4573
+Energy for replicate  23 =      -19.1032
+Energy for replicate  24 =      -23.2807
+Energy for replicate  25 =      -20.3494
+Energy for replicate  26 =      -22.5190
+Energy for replicate  27 =      -22.0551
+Energy for replicate  28 =      -21.2742
+Energy for replicate  29 =      -23.6666
+Energy for replicate  30 =      -18.5939
+Energy for replicate  31 =      -24.5365
+Energy for replicate  32 =      -34.1978
+Total Energy of replicates =     -750.9205
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+ NSTEP =    26000   TIME(PS) =      13.000  TEMP(K) =   247.28  PRESS =     0.0
+ Etot   =        -5.3508  EKtot   =        16.2162  EPtot      =       -21.5670
+ BOND   =         4.7665  ANGLE   =         5.5364  DIHED      =        12.5906
+ 1-4 NB =         3.8663  1-4 EEL =        45.8892  VDWAALS    =        -0.9376
+ EELEC  =       -76.2650  EGB     =       -17.0134  RESTRAINT  =         0.0000
+NEB replicate breakdown:
+Energy for replicate   1 =      -36.0245
+Energy for replicate   2 =      -25.5496
+Energy for replicate   3 =      -21.5670
+Energy for replicate   4 =      -27.3415
+Energy for replicate   5 =      -18.0546
+Energy for replicate   6 =      -25.1897
+Energy for replicate   7 =      -24.0041
+Energy for replicate   8 =      -21.5081
+Energy for replicate   9 =      -22.9819
+Energy for replicate  10 =      -20.5484
+Energy for replicate  11 =      -25.3324
+Energy for replicate  12 =      -24.4552
+Energy for replicate  13 =      -22.6732
+Energy for replicate  14 =      -24.8953
+Energy for replicate  15 =      -21.8199
+Energy for replicate  16 =      -24.5205
+Energy for replicate  17 =      -19.6671
+Energy for replicate  18 =      -25.6155
+Energy for replicate  19 =      -25.0306
+Energy for replicate  20 =      -18.7383
+Energy for replicate  21 =      -18.5286
+Energy for replicate  22 =      -21.9044
+Energy for replicate  23 =      -20.7119
+Energy for replicate  24 =      -25.8914
+Energy for replicate  25 =      -18.6916
+Energy for replicate  26 =      -15.3582
+Energy for replicate  27 =      -21.4248
+Energy for replicate  28 =      -22.8359
+Energy for replicate  29 =      -17.8233
+Energy for replicate  30 =      -22.5449
+Energy for replicate  31 =      -19.4204
+Energy for replicate  32 =      -34.1978
+Total Energy of replicates =     -734.8507
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+ NSTEP =    26500   TIME(PS) =      13.250  TEMP(K) =   255.82  PRESS =     0.0
+ Etot   =        -2.3126  EKtot   =        16.7757  EPtot      =       -19.0883
+ BOND   =         9.4817  ANGLE   =         5.9751  DIHED      =        10.5253
+ 1-4 NB =         3.7965  1-4 EEL =        46.7385  VDWAALS    =        -1.3585
+ EELEC  =       -77.3940  EGB     =       -16.8529  RESTRAINT  =         0.0000
+NEB replicate breakdown:
+Energy for replicate   1 =      -36.0245
+Energy for replicate   2 =      -21.8456
+Energy for replicate   3 =      -19.0883
+Energy for replicate   4 =      -19.4831
+Energy for replicate   5 =      -17.7115
+Energy for replicate   6 =      -22.1064
+Energy for replicate   7 =      -23.8015
+Energy for replicate   8 =      -22.5869
+Energy for replicate   9 =      -21.0114
+Energy for replicate  10 =      -22.0767
+Energy for replicate  11 =      -21.0935
+Energy for replicate  12 =      -23.0061
+Energy for replicate  13 =      -18.5316
+Energy for replicate  14 =      -20.8119
+Energy for replicate  15 =      -22.4128
+Energy for replicate  16 =      -24.1154
+Energy for replicate  17 =      -18.3760
+Energy for replicate  18 =      -21.3760
+Energy for replicate  19 =      -19.5596
+Energy for replicate  20 =      -15.4799
+Energy for replicate  21 =      -14.7560
+Energy for replicate  22 =      -14.2034
+Energy for replicate  23 =      -19.7104
+Energy for replicate  24 =      -21.4103
+Energy for replicate  25 =      -19.0175
+Energy for replicate  26 =      -23.2397
+Energy for replicate  27 =      -20.7188
+Energy for replicate  28 =      -21.0035
+Energy for replicate  29 =      -23.1873
+Energy for replicate  30 =      -24.5303
+Energy for replicate  31 =      -17.9755
+Energy for replicate  32 =      -34.1978
+Total Energy of replicates =     -684.4494
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+ NSTEP =    27000   TIME(PS) =      13.500  TEMP(K) =   216.00  PRESS =     0.0
+ Etot   =        -8.9154  EKtot   =        14.1647  EPtot      =       -23.0801
+ BOND   =         3.2967  ANGLE   =         6.9226  DIHED      =        11.1018
+ 1-4 NB =         3.7752  1-4 EEL =        48.5170  VDWAALS    =        -1.7254
+ EELEC  =       -77.6972  EGB     =       -17.2708  RESTRAINT  =         0.0000
+NEB replicate breakdown:
+Energy for replicate   1 =      -36.0245
+Energy for replicate   2 =      -22.2540
+Energy for replicate   3 =      -23.0801
+Energy for replicate   4 =      -21.7034
+Energy for replicate   5 =      -20.3513
+Energy for replicate   6 =      -23.8947
+Energy for replicate   7 =      -25.9689
+Energy for replicate   8 =      -24.1152
+Energy for replicate   9 =      -23.2428
+Energy for replicate  10 =      -19.6663
+Energy for replicate  11 =      -22.8141
+Energy for replicate  12 =      -23.5307
+Energy for replicate  13 =      -19.7521
+Energy for replicate  14 =      -20.6266
+Energy for replicate  15 =      -20.9672
+Energy for replicate  16 =      -22.0371
+Energy for replicate  17 =      -16.2128
+Energy for replicate  18 =      -17.0461
+Energy for replicate  19 =      -15.0710
+Energy for replicate  20 =      -21.7818
+Energy for replicate  21 =      -23.7285
+Energy for replicate  22 =      -18.4288
+Energy for replicate  23 =      -23.1382
+Energy for replicate  24 =      -16.8715
+Energy for replicate  25 =      -19.0647
+Energy for replicate  26 =      -22.4876
+Energy for replicate  27 =      -22.3087
+Energy for replicate  28 =      -20.0522
+Energy for replicate  29 =      -17.7520
+Energy for replicate  30 =      -17.9075
+Energy for replicate  31 =      -17.8734
+Energy for replicate  32 =      -34.1978
+Total Energy of replicates =     -693.9516
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+ NSTEP =    27500   TIME(PS) =      13.750  TEMP(K) =   208.11  PRESS =     0.0
+ Etot   =        -7.3220  EKtot   =        13.6475  EPtot      =       -20.9694
+ BOND   =         7.2405  ANGLE   =         5.1638  DIHED      =        10.6417
+ 1-4 NB =         4.2679  1-4 EEL =        48.4040  VDWAALS    =        -1.6918
+ EELEC  =       -77.1394  EGB     =       -17.8563  RESTRAINT  =         0.0000
+NEB replicate breakdown:
+Energy for replicate   1 =      -36.0245
+Energy for replicate   2 =      -21.2311
+Energy for replicate   3 =      -20.9694
+Energy for replicate   4 =      -21.9011
+Energy for replicate   5 =      -23.8824
+Energy for replicate   6 =      -23.2513
+Energy for replicate   7 =      -21.6458
+Energy for replicate   8 =      -20.2774
+Energy for replicate   9 =      -21.7866
+Energy for replicate  10 =      -23.8668
+Energy for replicate  11 =      -21.8587
+Energy for replicate  12 =      -22.5031
+Energy for replicate  13 =      -18.1448
+Energy for replicate  14 =      -25.2637
+Energy for replicate  15 =      -25.3661
+Energy for replicate  16 =      -19.7792
+Energy for replicate  17 =      -19.5736
+Energy for replicate  18 =      -22.4862
+Energy for replicate  19 =      -18.0748
+Energy for replicate  20 =      -16.9229
+Energy for replicate  21 =      -16.7396
+Energy for replicate  22 =      -20.7430
+Energy for replicate  23 =      -24.7754
+Energy for replicate  24 =      -22.6793
+Energy for replicate  25 =      -20.3285
+Energy for replicate  26 =      -19.1727
+Energy for replicate  27 =      -22.9753
+Energy for replicate  28 =      -21.7922
+Energy for replicate  29 =      -19.9595
+Energy for replicate  30 =      -17.9485
+Energy for replicate  31 =      -22.0199
+Energy for replicate  32 =      -34.1978
+Total Energy of replicates =     -708.1412
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+ NSTEP =    28000   TIME(PS) =      14.000  TEMP(K) =   240.33  PRESS =     0.0
+ Etot   =        -5.6299  EKtot   =        15.7600  EPtot      =       -21.3899
+ BOND   =         6.3750  ANGLE   =         6.1129  DIHED      =        10.9582
+ 1-4 NB =         4.2213  1-4 EEL =        47.6450  VDWAALS    =        -1.5191
+ EELEC  =       -77.9154  EGB     =       -17.2679  RESTRAINT  =         0.0000
+NEB replicate breakdown:
+Energy for replicate   1 =      -36.0245
+Energy for replicate   2 =      -18.3127
+Energy for replicate   3 =      -21.3899
+Energy for replicate   4 =      -24.5142
+Energy for replicate   5 =      -20.8414
+Energy for replicate   6 =      -19.6534
+Energy for replicate   7 =      -21.6496
+Energy for replicate   8 =      -23.4796
+Energy for replicate   9 =      -19.5568
+Energy for replicate  10 =      -23.8064
+Energy for replicate  11 =      -21.9928
+Energy for replicate  12 =      -19.0034
+Energy for replicate  13 =      -19.7120
+Energy for replicate  14 =      -23.9648
+Energy for replicate  15 =      -19.8872
+Energy for replicate  16 =      -21.7831
+Energy for replicate  17 =      -17.6889
+Energy for replicate  18 =      -20.9643
+Energy for replicate  19 =      -18.0533
+Energy for replicate  20 =      -19.4902
+Energy for replicate  21 =      -17.2596
+Energy for replicate  22 =      -16.4901
+Energy for replicate  23 =      -24.7205
+Energy for replicate  24 =      -21.3503
+Energy for replicate  25 =      -18.1302
+Energy for replicate  26 =      -20.5656
+Energy for replicate  27 =      -16.2505
+Energy for replicate  28 =      -19.0605
+Energy for replicate  29 =      -16.2033
+Energy for replicate  30 =      -23.6784
+Energy for replicate  31 =      -19.5321
+Energy for replicate  32 =      -34.1978
+Total Energy of replicates =     -679.2074
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+ NSTEP =    28500   TIME(PS) =      14.250  TEMP(K) =   255.24  PRESS =     0.0
+ Etot   =        -7.5756  EKtot   =        16.7382  EPtot      =       -24.3138
+ BOND   =         4.4257  ANGLE   =         7.4161  DIHED      =        10.0028
+ 1-4 NB =         3.8814  1-4 EEL =        44.7808  VDWAALS    =        -1.8377
+ EELEC  =       -74.8798  EGB     =       -18.1033  RESTRAINT  =         0.0000
+NEB replicate breakdown:
+Energy for replicate   1 =      -36.0245
+Energy for replicate   2 =      -20.3147
+Energy for replicate   3 =      -24.3138
+Energy for replicate   4 =      -24.9691
+Energy for replicate   5 =      -20.1473
+Energy for replicate   6 =      -19.8543
+Energy for replicate   7 =      -24.8073
+Energy for replicate   8 =      -25.2193
+Energy for replicate   9 =      -21.6995
+Energy for replicate  10 =      -17.2557
+Energy for replicate  11 =      -22.9066
+Energy for replicate  12 =      -17.0316
+Energy for replicate  13 =      -19.9077
+Energy for replicate  14 =      -19.6952
+Energy for replicate  15 =      -20.6303
+Energy for replicate  16 =      -17.5903
+Energy for replicate  17 =      -19.0058
+Energy for replicate  18 =      -23.0264
+Energy for replicate  19 =      -15.5127
+Energy for replicate  20 =      -20.8796
+Energy for replicate  21 =      -20.7220
+Energy for replicate  22 =      -16.8101
+Energy for replicate  23 =      -19.1395
+Energy for replicate  24 =      -23.6708
+Energy for replicate  25 =      -21.6712
+Energy for replicate  26 =      -14.8327
+Energy for replicate  27 =      -20.1440
+Energy for replicate  28 =      -20.2053
+Energy for replicate  29 =      -17.9115
+Energy for replicate  30 =      -20.0398
+Energy for replicate  31 =      -24.2448
+Energy for replicate  32 =      -34.1978
+Total Energy of replicates =     -684.3814
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+ NSTEP =    29000   TIME(PS) =      14.500  TEMP(K) =   251.60  PRESS =     0.0
+ Etot   =        -6.3228  EKtot   =        16.4993  EPtot      =       -22.8222
+ BOND   =         6.6780  ANGLE   =         8.9790  DIHED      =        10.0533
+ 1-4 NB =         2.0292  1-4 EEL =        42.9458  VDWAALS    =        -1.9325
+ EELEC  =       -73.1292  EGB     =       -18.4457  RESTRAINT  =         0.0000
+NEB replicate breakdown:
+Energy for replicate   1 =      -36.0245
+Energy for replicate   2 =      -21.0229
+Energy for replicate   3 =      -22.8222
+Energy for replicate   4 =      -18.4373
+Energy for replicate   5 =      -20.5389
+Energy for replicate   6 =      -21.3390
+Energy for replicate   7 =      -21.6528
+Energy for replicate   8 =      -24.3342
+Energy for replicate   9 =      -20.1011
+Energy for replicate  10 =      -10.9862
+Energy for replicate  11 =      -23.9234
+Energy for replicate  12 =      -19.1429
+Energy for replicate  13 =      -20.9529
+Energy for replicate  14 =      -19.4133
+Energy for replicate  15 =      -18.4709
+Energy for replicate  16 =      -18.8831
+Energy for replicate  17 =      -19.4232
+Energy for replicate  18 =      -23.3545
+Energy for replicate  19 =      -23.2115
+Energy for replicate  20 =      -19.8856
+Energy for replicate  21 =      -19.1879
+Energy for replicate  22 =      -16.4721
+Energy for replicate  23 =      -25.1474
+Energy for replicate  24 =      -23.0797
+Energy for replicate  25 =      -20.9760
+Energy for replicate  26 =      -20.2257
+Energy for replicate  27 =      -19.6604
+Energy for replicate  28 =      -25.0354
+Energy for replicate  29 =       -9.1559
+Energy for replicate  30 =      -18.7480
+Energy for replicate  31 =      -24.0182
+Energy for replicate  32 =      -34.1978
+Total Energy of replicates =     -679.8250
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+ NSTEP =    29500   TIME(PS) =      14.750  TEMP(K) =   248.95  PRESS =     0.0
+ Etot   =        -8.1515  EKtot   =        16.3257  EPtot      =       -24.4772
+ BOND   =         4.5503  ANGLE   =         6.7598  DIHED      =        10.2111
+ 1-4 NB =         3.2301  1-4 EEL =        44.5795  VDWAALS    =        -1.3491
+ EELEC  =       -74.7275  EGB     =       -17.7313  RESTRAINT  =         0.0000
+NEB replicate breakdown:
+Energy for replicate   1 =      -36.0245
+Energy for replicate   2 =      -17.7945
+Energy for replicate   3 =      -24.4772
+Energy for replicate   4 =      -22.0217
+Energy for replicate   5 =      -22.2218
+Energy for replicate   6 =      -16.9493
+Energy for replicate   7 =      -21.9113
+Energy for replicate   8 =      -20.0536
+Energy for replicate   9 =      -21.3787
+Energy for replicate  10 =      -22.1356
+Energy for replicate  11 =      -22.8130
+Energy for replicate  12 =      -21.7731
+Energy for replicate  13 =      -24.0257
+Energy for replicate  14 =      -16.6034
+Energy for replicate  15 =      -20.2108
+Energy for replicate  16 =      -15.7943
+Energy for replicate  17 =      -17.0028
+Energy for replicate  18 =      -20.0983
+Energy for replicate  19 =      -21.9943
+Energy for replicate  20 =      -18.9280
+Energy for replicate  21 =      -19.2227
+Energy for replicate  22 =      -14.0792
+Energy for replicate  23 =      -24.3831
+Energy for replicate  24 =      -20.1682
+Energy for replicate  25 =      -21.0616
+Energy for replicate  26 =      -21.3155
+Energy for replicate  27 =      -22.1054
+Energy for replicate  28 =      -19.2518
+Energy for replicate  29 =      -18.2921
+Energy for replicate  30 =      -12.1159
+Energy for replicate  31 =      -17.4593
+Energy for replicate  32 =      -34.1978
+Total Energy of replicates =     -667.8645
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+ NSTEP =    30000   TIME(PS) =      15.000  TEMP(K) =   310.68  PRESS =     0.0
+ Etot   =        -0.7731  EKtot   =        20.3736  EPtot      =       -21.1466
+ BOND   =         6.2478  ANGLE   =         7.7715  DIHED      =        12.5714
+ 1-4 NB =         2.6878  1-4 EEL =        44.3073  VDWAALS    =        -1.9269
+ EELEC  =       -74.4307  EGB     =       -18.3748  RESTRAINT  =         0.0000
+NEB replicate breakdown:
+Energy for replicate   1 =      -36.0245
+Energy for replicate   2 =      -22.3274
+Energy for replicate   3 =      -21.1466
+Energy for replicate   4 =      -16.4889
+Energy for replicate   5 =      -22.1346
+Energy for replicate   6 =      -22.2052
+Energy for replicate   7 =      -17.1687
+Energy for replicate   8 =      -21.0258
+Energy for replicate   9 =      -16.0573
+Energy for replicate  10 =      -18.9768
+Energy for replicate  11 =      -24.9341
+Energy for replicate  12 =      -21.2574
+Energy for replicate  13 =      -19.8467
+Energy for replicate  14 =      -20.2607
+Energy for replicate  15 =      -18.7674
+Energy for replicate  16 =      -16.3677
+Energy for replicate  17 =      -16.6676
+Energy for replicate  18 =       -9.9658
+Energy for replicate  19 =      -20.4266
+Energy for replicate  20 =      -19.2785
+Energy for replicate  21 =      -21.3969
+Energy for replicate  22 =       -8.2779
+Energy for replicate  23 =      -19.4229
+Energy for replicate  24 =      -10.7850
+Energy for replicate  25 =      -17.2477
+Energy for replicate  26 =      -22.3571
+Energy for replicate  27 =      -20.0209
+Energy for replicate  28 =      -20.1683
+Energy for replicate  29 =      -16.8291
+Energy for replicate  30 =      -17.3026
+Energy for replicate  31 =      -19.6145
+Energy for replicate  32 =      -34.1978
+Total Energy of replicates =     -628.9490
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+ NSTEP =    30500   TIME(PS) =      15.250  TEMP(K) =   213.82  PRESS =     0.0
+ Etot   =        -6.4373  EKtot   =        14.0215  EPtot      =       -20.4588
+ BOND   =         5.3244  ANGLE   =        10.4374  DIHED      =        11.1553
+ 1-4 NB =         2.8871  1-4 EEL =        42.8341  VDWAALS    =        -2.0170
+ EELEC  =       -73.4225  EGB     =       -17.6577  RESTRAINT  =         0.0000
+NEB replicate breakdown:
+Energy for replicate   1 =      -36.0245
+Energy for replicate   2 =      -17.4517
+Energy for replicate   3 =      -20.4588
+Energy for replicate   4 =      -26.0440
+Energy for replicate   5 =      -20.6134
+Energy for replicate   6 =      -19.6679
+Energy for replicate   7 =      -23.3044
+Energy for replicate   8 =      -22.5673
+Energy for replicate   9 =      -22.3521
+Energy for replicate  10 =      -19.3371
+Energy for replicate  11 =      -18.6552
+Energy for replicate  12 =      -17.0562
+Energy for replicate  13 =      -25.2965
+Energy for replicate  14 =      -20.3449
+Energy for replicate  15 =      -25.1895
+Energy for replicate  16 =      -22.7120
+Energy for replicate  17 =      -22.8407
+Energy for replicate  18 =      -18.0756
+Energy for replicate  19 =      -24.6928
+Energy for replicate  20 =      -19.4598
+Energy for replicate  21 =      -19.2892
+Energy for replicate  22 =      -17.1914
+Energy for replicate  23 =      -16.9367
+Energy for replicate  24 =      -18.2871
+Energy for replicate  25 =      -17.4246
+Energy for replicate  26 =      -16.2269
+Energy for replicate  27 =      -17.1194
+Energy for replicate  28 =      -19.0944
+Energy for replicate  29 =      -15.6715
+Energy for replicate  30 =      -15.6614
+Energy for replicate  31 =      -18.3364
+Energy for replicate  32 =      -34.1978
+Total Energy of replicates =     -667.5811
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+ NSTEP =    31000   TIME(PS) =      15.500  TEMP(K) =   268.29  PRESS =     0.0
+ Etot   =        -3.5780  EKtot   =        17.5938  EPtot      =       -21.1718
+ BOND   =         4.0663  ANGLE   =         8.1438  DIHED      =        13.1864
+ 1-4 NB =         2.6018  1-4 EEL =        44.0087  VDWAALS    =        -1.9138
+ EELEC  =       -73.3630  EGB     =       -17.9020  RESTRAINT  =         0.0000
+NEB replicate breakdown:
+Energy for replicate   1 =      -36.0245
+Energy for replicate   2 =      -18.8567
+Energy for replicate   3 =      -21.1718
+Energy for replicate   4 =      -19.2108
+Energy for replicate   5 =      -17.0351
+Energy for replicate   6 =      -15.7265
+Energy for replicate   7 =      -19.9963
+Energy for replicate   8 =      -17.7472
+Energy for replicate   9 =      -25.9360
+Energy for replicate  10 =      -20.8621
+Energy for replicate  11 =      -21.0320
+Energy for replicate  12 =      -15.7301
+Energy for replicate  13 =      -20.8886
+Energy for replicate  14 =      -12.9464
+Energy for replicate  15 =      -23.3018
+Energy for replicate  16 =      -16.2873
+Energy for replicate  17 =      -18.0612
+Energy for replicate  18 =      -17.2611
+Energy for replicate  19 =      -18.3439
+Energy for replicate  20 =      -14.6953
+Energy for replicate  21 =      -16.6591
+Energy for replicate  22 =      -17.2599
+Energy for replicate  23 =      -22.3312
+Energy for replicate  24 =      -17.7980
+Energy for replicate  25 =      -19.7679
+Energy for replicate  26 =      -19.4258
+Energy for replicate  27 =      -18.2421
+Energy for replicate  28 =      -16.1773
+Energy for replicate  29 =      -21.3435
+Energy for replicate  30 =      -18.4963
+Energy for replicate  31 =      -20.9181
+Energy for replicate  32 =      -34.1978
+Total Energy of replicates =     -633.7316
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+ NSTEP =    31500   TIME(PS) =      15.750  TEMP(K) =   453.35  PRESS =     0.0
+ Etot   =         9.3229  EKtot   =        29.7295  EPtot      =       -20.4066
+ BOND   =         4.6091  ANGLE   =         9.6669  DIHED      =        12.1440
+ 1-4 NB =         2.5708  1-4 EEL =        43.2350  VDWAALS    =        -1.8521
+ EELEC  =       -72.5805  EGB     =       -18.1997  RESTRAINT  =         0.0000
+NEB replicate breakdown:
+Energy for replicate   1 =      -36.0245
+Energy for replicate   2 =      -24.0531
+Energy for replicate   3 =      -20.4066
+Energy for replicate   4 =      -19.8894
+Energy for replicate   5 =      -19.6006
+Energy for replicate   6 =      -20.1510
+Energy for replicate   7 =      -19.1204
+Energy for replicate   8 =      -21.1708
+Energy for replicate   9 =      -19.1899
+Energy for replicate  10 =      -18.2830
+Energy for replicate  11 =      -23.0270
+Energy for replicate  12 =      -25.2840
+Energy for replicate  13 =      -19.3341
+Energy for replicate  14 =      -17.7376
+Energy for replicate  15 =      -22.1074
+Energy for replicate  16 =      -21.3594
+Energy for replicate  17 =      -20.1389
+Energy for replicate  18 =      -21.9240
+Energy for replicate  19 =      -15.7312
+Energy for replicate  20 =      -16.0438
+Energy for replicate  21 =      -19.8600
+Energy for replicate  22 =      -17.2209
+Energy for replicate  23 =      -13.7590
+Energy for replicate  24 =      -22.0904
+Energy for replicate  25 =      -17.2875
+Energy for replicate  26 =      -16.0632
+Energy for replicate  27 =      -11.0901
+Energy for replicate  28 =      -14.5156
+Energy for replicate  29 =      -18.7339
+Energy for replicate  30 =      -14.4302
+Energy for replicate  31 =      -22.9717
+Energy for replicate  32 =      -34.1978
+Total Energy of replicates =     -642.7970
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+ NSTEP =    32000   TIME(PS) =      16.000  TEMP(K) =   301.84  PRESS =     0.0
+ Etot   =        -0.0483  EKtot   =        19.7938  EPtot      =       -19.8421
+ BOND   =         8.5946  ANGLE   =         7.3052  DIHED      =        11.3260
+ 1-4 NB =         3.0196  1-4 EEL =        43.5509  VDWAALS    =        -1.5504
+ EELEC  =       -74.3657  EGB     =       -17.7224  RESTRAINT  =         0.0000
+NEB replicate breakdown:
+Energy for replicate   1 =      -36.0245
+Energy for replicate   2 =      -19.2216
+Energy for replicate   3 =      -19.8421
+Energy for replicate   4 =      -22.1883
+Energy for replicate   5 =      -21.3237
+Energy for replicate   6 =      -19.4175
+Energy for replicate   7 =      -17.1289
+Energy for replicate   8 =      -21.7219
+Energy for replicate   9 =      -18.7019
+Energy for replicate  10 =      -20.4832
+Energy for replicate  11 =      -19.3009
+Energy for replicate  12 =      -22.4273
+Energy for replicate  13 =      -12.7216
+Energy for replicate  14 =      -16.4680
+Energy for replicate  15 =      -24.1090
+Energy for replicate  16 =      -19.8995
+Energy for replicate  17 =      -15.4015
+Energy for replicate  18 =      -18.6817
+Energy for replicate  19 =      -10.0185
+Energy for replicate  20 =      -17.2568
+Energy for replicate  21 =      -21.9738
+Energy for replicate  22 =      -15.6876
+Energy for replicate  23 =      -12.3913
+Energy for replicate  24 =      -18.9619
+Energy for replicate  25 =       -8.7705
+Energy for replicate  26 =      -16.3184
+Energy for replicate  27 =       -9.1423
+Energy for replicate  28 =      -21.3757
+Energy for replicate  29 =      -19.3451
+Energy for replicate  30 =      -17.5267
+Energy for replicate  31 =      -19.7285
+Energy for replicate  32 =      -34.1978
+Total Energy of replicates =     -607.7579
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+ NSTEP =    32500   TIME(PS) =      16.250  TEMP(K) =   287.58  PRESS =     0.0
+ Etot   =        -0.9992  EKtot   =        18.8589  EPtot      =       -19.8581
+ BOND   =         5.1742  ANGLE   =         9.6823  DIHED      =        12.8845
+ 1-4 NB =         2.6972  1-4 EEL =        43.9197  VDWAALS    =        -1.9862
+ EELEC  =       -73.7332  EGB     =       -18.4965  RESTRAINT  =         0.0000
+NEB replicate breakdown:
+Energy for replicate   1 =      -36.0245
+Energy for replicate   2 =      -18.1073
+Energy for replicate   3 =      -19.8581
+Energy for replicate   4 =      -21.8459
+Energy for replicate   5 =      -22.4606
+Energy for replicate   6 =      -17.1234
+Energy for replicate   7 =      -23.7671
+Energy for replicate   8 =      -21.5942
+Energy for replicate   9 =      -16.3840
+Energy for replicate  10 =      -18.1810
+Energy for replicate  11 =      -17.4568
+Energy for replicate  12 =      -19.1205
+Energy for replicate  13 =      -18.3995
+Energy for replicate  14 =      -17.0535
+Energy for replicate  15 =      -18.4543
+Energy for replicate  16 =      -20.7542
+Energy for replicate  17 =       -9.8793
+Energy for replicate  18 =      -20.3064
+Energy for replicate  19 =      -18.5748
+Energy for replicate  20 =      -16.2217
+Energy for replicate  21 =      -14.0489
+Energy for replicate  22 =      -16.9298
+Energy for replicate  23 =      -18.9163
+Energy for replicate  24 =      -20.3420
+Energy for replicate  25 =      -17.5650
+Energy for replicate  26 =      -10.2032
+Energy for replicate  27 =       -9.8242
+Energy for replicate  28 =      -17.8104
+Energy for replicate  29 =      -17.7300
+Energy for replicate  30 =      -19.8670
+Energy for replicate  31 =      -16.2901
+Energy for replicate  32 =      -34.1978
+Total Energy of replicates =     -605.2917
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+ NSTEP =    33000   TIME(PS) =      16.500  TEMP(K) =   346.02  PRESS =     0.0
+ Etot   =         3.9653  EKtot   =        22.6909  EPtot      =       -18.7256
+ BOND   =         3.9793  ANGLE   =        13.7613  DIHED      =        10.5372
+ 1-4 NB =         1.8384  1-4 EEL =        44.7270  VDWAALS    =        -1.4853
+ EELEC  =       -74.3014  EGB     =       -17.7820  RESTRAINT  =         0.0000
+NEB replicate breakdown:
+Energy for replicate   1 =      -36.0245
+Energy for replicate   2 =      -17.2007
+Energy for replicate   3 =      -18.7256
+Energy for replicate   4 =      -17.8250
+Energy for replicate   5 =      -20.1418
+Energy for replicate   6 =      -18.4431
+Energy for replicate   7 =      -20.7600
+Energy for replicate   8 =      -21.0028
+Energy for replicate   9 =      -16.9983
+Energy for replicate  10 =      -22.8658
+Energy for replicate  11 =      -13.8418
+Energy for replicate  12 =      -13.4711
+Energy for replicate  13 =      -14.2327
+Energy for replicate  14 =      -19.6472
+Energy for replicate  15 =      -18.9921
+Energy for replicate  16 =      -24.9449
+Energy for replicate  17 =      -20.2021
+Energy for replicate  18 =      -23.6564
+Energy for replicate  19 =      -20.6224
+Energy for replicate  20 =      -15.1394
+Energy for replicate  21 =      -20.5440
+Energy for replicate  22 =      -10.5536
+Energy for replicate  23 =      -20.7028
+Energy for replicate  24 =      -23.9483
+Energy for replicate  25 =      -21.0993
+Energy for replicate  26 =      -18.8561
+Energy for replicate  27 =      -17.6749
+Energy for replicate  28 =      -17.5078
+Energy for replicate  29 =      -17.5761
+Energy for replicate  30 =      -16.5366
+Energy for replicate  31 =      -14.4853
+Energy for replicate  32 =      -34.1978
+Total Energy of replicates =     -628.4200
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+ NSTEP =    33500   TIME(PS) =      16.750  TEMP(K) =   367.56  PRESS =     0.0
+ Etot   =         5.2572  EKtot   =        24.1038  EPtot      =       -18.8466
+ BOND   =         9.2666  ANGLE   =         7.1782  DIHED      =        10.3280
+ 1-4 NB =         3.2510  1-4 EEL =        44.4053  VDWAALS    =        -0.6780
+ EELEC  =       -75.2706  EGB     =       -17.3271  RESTRAINT  =         0.0000
+NEB replicate breakdown:
+Energy for replicate   1 =      -36.0245
+Energy for replicate   2 =      -15.7481
+Energy for replicate   3 =      -18.8466
+Energy for replicate   4 =      -18.9475
+Energy for replicate   5 =      -25.8319
+Energy for replicate   6 =      -21.1373
+Energy for replicate   7 =      -19.5701
+Energy for replicate   8 =      -12.6261
+Energy for replicate   9 =      -24.5907
+Energy for replicate  10 =      -20.6603
+Energy for replicate  11 =      -19.7752
+Energy for replicate  12 =      -19.8309
+Energy for replicate  13 =      -20.5246
+Energy for replicate  14 =      -17.0932
+Energy for replicate  15 =      -22.0597
+Energy for replicate  16 =      -19.0141
+Energy for replicate  17 =      -18.0656
+Energy for replicate  18 =      -15.0924
+Energy for replicate  19 =      -22.1044
+Energy for replicate  20 =      -22.5974
+Energy for replicate  21 =      -17.1813
+Energy for replicate  22 =      -10.5350
+Energy for replicate  23 =      -16.4623
+Energy for replicate  24 =      -14.9546
+Energy for replicate  25 =      -16.3834
+Energy for replicate  26 =      -15.8573
+Energy for replicate  27 =      -18.1307
+Energy for replicate  28 =      -16.1421
+Energy for replicate  29 =      -18.5448
+Energy for replicate  30 =      -17.3472
+Energy for replicate  31 =      -17.1251
+Energy for replicate  32 =      -34.1978
+Total Energy of replicates =     -623.0023
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+ NSTEP =    34000   TIME(PS) =      17.000  TEMP(K) =   272.04  PRESS =     0.0
+ Etot   =        -0.4978  EKtot   =        17.8395  EPtot      =       -18.3373
+ BOND   =         4.7782  ANGLE   =         9.5081  DIHED      =        10.9348
+ 1-4 NB =         3.2409  1-4 EEL =        46.6466  VDWAALS    =         0.6166
+ EELEC  =       -76.2560  EGB     =       -17.8066  RESTRAINT  =         0.0000
+NEB replicate breakdown:
+Energy for replicate   1 =      -36.0245
+Energy for replicate   2 =      -17.1305
+Energy for replicate   3 =      -18.3373
+Energy for replicate   4 =      -18.0453
+Energy for replicate   5 =      -21.2501
+Energy for replicate   6 =      -20.9154
+Energy for replicate   7 =      -24.5530
+Energy for replicate   8 =      -19.3713
+Energy for replicate   9 =      -14.7809
+Energy for replicate  10 =      -15.8364
+Energy for replicate  11 =      -18.8363
+Energy for replicate  12 =      -22.9066
+Energy for replicate  13 =      -18.8253
+Energy for replicate  14 =      -13.3849
+Energy for replicate  15 =      -21.9225
+Energy for replicate  16 =      -17.4220
+Energy for replicate  17 =      -17.7905
+Energy for replicate  18 =      -15.2111
+Energy for replicate  19 =      -22.6379
+Energy for replicate  20 =      -18.5485
+Energy for replicate  21 =      -18.5005
+Energy for replicate  22 =      -15.7907
+Energy for replicate  23 =      -13.6695
+Energy for replicate  24 =      -14.8360
+Energy for replicate  25 =      -16.5015
+Energy for replicate  26 =      -23.6617
+Energy for replicate  27 =      -16.2853
+Energy for replicate  28 =      -18.2154
+Energy for replicate  29 =      -22.0170
+Energy for replicate  30 =      -15.0319
+Energy for replicate  31 =      -20.4760
+Energy for replicate  32 =      -34.1978
+Total Energy of replicates =     -622.9138
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+ NSTEP =    34500   TIME(PS) =      17.250  TEMP(K) =   275.74  PRESS =     0.0
+ Etot   =         0.9343  EKtot   =        18.0820  EPtot      =       -17.1477
+ BOND   =         8.4150  ANGLE   =         9.7855  DIHED      =        10.7138
+ 1-4 NB =         3.0609  1-4 EEL =        43.3243  VDWAALS    =        -0.3058
+ EELEC  =       -75.4406  EGB     =       -16.7009  RESTRAINT  =         0.0000
+NEB replicate breakdown:
+Energy for replicate   1 =      -36.0245
+Energy for replicate   2 =      -17.1612
+Energy for replicate   3 =      -17.1477
+Energy for replicate   4 =      -16.8462
+Energy for replicate   5 =      -15.6713
+Energy for replicate   6 =      -17.1847
+Energy for replicate   7 =      -15.9976
+Energy for replicate   8 =      -15.0890
+Energy for replicate   9 =      -20.6505
+Energy for replicate  10 =      -18.0156
+Energy for replicate  11 =      -17.0396
+Energy for replicate  12 =      -16.4373
+Energy for replicate  13 =      -24.3103
+Energy for replicate  14 =      -17.4657
+Energy for replicate  15 =      -19.0042
+Energy for replicate  16 =      -11.5054
+Energy for replicate  17 =      -17.7006
+Energy for replicate  18 =      -15.5677
+Energy for replicate  19 =      -17.9826
+Energy for replicate  20 =      -20.8058
+Energy for replicate  21 =      -15.4125
+Energy for replicate  22 =      -15.2408
+Energy for replicate  23 =      -15.5435
+Energy for replicate  24 =      -15.3010
+Energy for replicate  25 =       -9.9371
+Energy for replicate  26 =      -13.7023
+Energy for replicate  27 =      -16.0451
+Energy for replicate  28 =      -13.2545
+Energy for replicate  29 =      -22.9851
+Energy for replicate  30 =      -16.7945
+Energy for replicate  31 =      -18.6938
+Energy for replicate  32 =      -34.1978
+Total Energy of replicates =     -574.7155
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+ NSTEP =    35000   TIME(PS) =      17.500  TEMP(K) =   220.01  PRESS =     0.0
+ Etot   =        -4.3847  EKtot   =        14.4279  EPtot      =       -18.8126
+ BOND   =         6.7046  ANGLE   =         5.4971  DIHED      =        11.7788
+ 1-4 NB =         3.6111  1-4 EEL =        46.1841  VDWAALS    =         1.1613
+ EELEC  =       -77.8960  EGB     =       -15.8538  RESTRAINT  =         0.0000
+NEB replicate breakdown:
+Energy for replicate   1 =      -36.0245
+Energy for replicate   2 =      -18.8781
+Energy for replicate   3 =      -18.8126
+Energy for replicate   4 =      -15.6095
+Energy for replicate   5 =      -24.3677
+Energy for replicate   6 =      -17.1265
+Energy for replicate   7 =      -13.6192
+Energy for replicate   8 =      -21.8330
+Energy for replicate   9 =      -16.3376
+Energy for replicate  10 =      -13.2164
+Energy for replicate  11 =      -17.4364
+Energy for replicate  12 =      -16.4349
+Energy for replicate  13 =      -22.1336
+Energy for replicate  14 =      -14.9681
+Energy for replicate  15 =      -13.2566
+Energy for replicate  16 =      -15.1405
+Energy for replicate  17 =      -14.0136
+Energy for replicate  18 =      -19.4932
+Energy for replicate  19 =      -20.7782
+Energy for replicate  20 =      -12.3568
+Energy for replicate  21 =      -15.4727
+Energy for replicate  22 =      -14.2457
+Energy for replicate  23 =      -18.5592
+Energy for replicate  24 =      -20.9611
+Energy for replicate  25 =      -13.7139
+Energy for replicate  26 =      -16.4699
+Energy for replicate  27 =      -16.2485
+Energy for replicate  28 =      -19.5117
+Energy for replicate  29 =      -16.2586
+Energy for replicate  30 =      -13.9926
+Energy for replicate  31 =      -17.4369
+Energy for replicate  32 =      -34.1978
+Total Energy of replicates =     -578.9057
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+ NSTEP =    35500   TIME(PS) =      17.750  TEMP(K) =   255.32  PRESS =     0.0
+ Etot   =         7.1719  EKtot   =        16.7432  EPtot      =        -9.5712
+ BOND   =         7.5473  ANGLE   =        16.2761  DIHED      =        12.4385
+ 1-4 NB =         2.8675  1-4 EEL =        44.2418  VDWAALS    =        -0.6846
+ EELEC  =       -74.7637  EGB     =       -17.4941  RESTRAINT  =         0.0000
+NEB replicate breakdown:
+Energy for replicate   1 =      -36.0245
+Energy for replicate   2 =      -15.4809
+Energy for replicate   3 =       -9.5712
+Energy for replicate   4 =      -16.6025
+Energy for replicate   5 =      -22.4370
+Energy for replicate   6 =      -20.1352
+Energy for replicate   7 =      -20.8232
+Energy for replicate   8 =      -15.1390
+Energy for replicate   9 =      -21.8930
+Energy for replicate  10 =      -16.8065
+Energy for replicate  11 =      -21.3860
+Energy for replicate  12 =       -9.9022
+Energy for replicate  13 =      -21.4013
+Energy for replicate  14 =      -20.5419
+Energy for replicate  15 =      -15.6998
+Energy for replicate  16 =      -16.6895
+Energy for replicate  17 =      -13.9875
+Energy for replicate  18 =      -17.5876
+Energy for replicate  19 =      -16.8771
+Energy for replicate  20 =      -15.3499
+Energy for replicate  21 =      -16.1997
+Energy for replicate  22 =      -17.9154
+Energy for replicate  23 =      -17.9397
+Energy for replicate  24 =      -17.5723
+Energy for replicate  25 =      -18.7346
+Energy for replicate  26 =      -19.0588
+Energy for replicate  27 =      -15.8781
+Energy for replicate  28 =      -19.6721
+Energy for replicate  29 =      -18.8353
+Energy for replicate  30 =      -19.6264
+Energy for replicate  31 =      -18.2893
+Energy for replicate  32 =      -34.1978
+Total Energy of replicates =     -598.2553
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+ NSTEP =    36000   TIME(PS) =      18.000  TEMP(K) =   287.16  PRESS =     0.0
+ Etot   =         1.4863  EKtot   =        18.8314  EPtot      =       -17.3451
+ BOND   =         8.5087  ANGLE   =         5.4828  DIHED      =        10.7199
+ 1-4 NB =         4.0744  1-4 EEL =        46.6747  VDWAALS    =         1.6331
+ EELEC  =       -76.8439  EGB     =       -17.5948  RESTRAINT  =         0.0000
+NEB replicate breakdown:
+Energy for replicate   1 =      -36.0245
+Energy for replicate   2 =      -17.6319
+Energy for replicate   3 =      -17.3451
+Energy for replicate   4 =      -19.5135
+Energy for replicate   5 =      -17.4612
+Energy for replicate   6 =      -15.0615
+Energy for replicate   7 =      -16.0376
+Energy for replicate   8 =      -15.1773
+Energy for replicate   9 =      -20.1883
+Energy for replicate  10 =      -17.8127
+Energy for replicate  11 =      -17.7569
+Energy for replicate  12 =      -22.1636
+Energy for replicate  13 =      -11.9878
+Energy for replicate  14 =      -17.3312
+Energy for replicate  15 =      -18.4543
+Energy for replicate  16 =      -18.1082
+Energy for replicate  17 =      -15.2002
+Energy for replicate  18 =      -12.4898
+Energy for replicate  19 =      -22.5363
+Energy for replicate  20 =      -19.3362
+Energy for replicate  21 =      -13.4053
+Energy for replicate  22 =      -20.1762
+Energy for replicate  23 =      -11.6807
+Energy for replicate  24 =      -12.4597
+Energy for replicate  25 =      -19.3214
+Energy for replicate  26 =      -19.2397
+Energy for replicate  27 =      -17.0919
+Energy for replicate  28 =      -17.4153
+Energy for replicate  29 =      -15.3267
+Energy for replicate  30 =      -17.8349
+Energy for replicate  31 =      -12.8155
+Energy for replicate  32 =      -34.1978
+Total Energy of replicates =     -578.5835
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+ NSTEP =    36500   TIME(PS) =      18.250  TEMP(K) =   301.65  PRESS =     0.0
+ Etot   =        -2.8073  EKtot   =        19.7813  EPtot      =       -22.5887
+ BOND   =         6.0336  ANGLE   =         5.5387  DIHED      =        10.5816
+ 1-4 NB =         3.5908  1-4 EEL =        46.9097  VDWAALS    =        -1.1527
+ EELEC  =       -76.7879  EGB     =       -17.3026  RESTRAINT  =         0.0000
+NEB replicate breakdown:
+Energy for replicate   1 =      -36.0245
+Energy for replicate   2 =      -20.2854
+Energy for replicate   3 =      -22.5887
+Energy for replicate   4 =      -14.6934
+Energy for replicate   5 =      -17.8933
+Energy for replicate   6 =      -22.1011
+Energy for replicate   7 =      -21.4822
+Energy for replicate   8 =      -13.6233
+Energy for replicate   9 =      -13.6582
+Energy for replicate  10 =      -18.2338
+Energy for replicate  11 =      -21.1722
+Energy for replicate  12 =      -11.9759
+Energy for replicate  13 =      -23.2268
+Energy for replicate  14 =      -19.5724
+Energy for replicate  15 =      -17.6652
+Energy for replicate  16 =      -13.4822
+Energy for replicate  17 =      -14.0367
+Energy for replicate  18 =      -15.1909
+Energy for replicate  19 =      -12.3018
+Energy for replicate  20 =      -17.2386
+Energy for replicate  21 =      -14.7667
+Energy for replicate  22 =      -14.5402
+Energy for replicate  23 =      -17.8333
+Energy for replicate  24 =      -16.5464
+Energy for replicate  25 =      -16.8800
+Energy for replicate  26 =      -21.4955
+Energy for replicate  27 =      -19.0945
+Energy for replicate  28 =      -18.8050
+Energy for replicate  29 =      -16.9000
+Energy for replicate  30 =      -15.4113
+Energy for replicate  31 =      -14.0442
+Energy for replicate  32 =      -34.1978
+Total Energy of replicates =     -586.9614
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+ NSTEP =    37000   TIME(PS) =      18.500  TEMP(K) =   232.64  PRESS =     0.0
+ Etot   =        -4.4441  EKtot   =        15.2562  EPtot      =       -19.7003
+ BOND   =         5.5432  ANGLE   =         9.3050  DIHED      =        12.8522
+ 1-4 NB =         2.4006  1-4 EEL =        45.1594  VDWAALS    =        -1.4812
+ EELEC  =       -76.0928  EGB     =       -17.3867  RESTRAINT  =         0.0000
+NEB replicate breakdown:
+Energy for replicate   1 =      -36.0245
+Energy for replicate   2 =      -20.6484
+Energy for replicate   3 =      -19.7003
+Energy for replicate   4 =      -15.5044
+Energy for replicate   5 =      -18.0782
+Energy for replicate   6 =      -15.2632
+Energy for replicate   7 =      -19.0644
+Energy for replicate   8 =      -20.1119
+Energy for replicate   9 =      -12.9670
+Energy for replicate  10 =      -15.7584
+Energy for replicate  11 =      -14.6001
+Energy for replicate  12 =      -20.8787
+Energy for replicate  13 =      -16.5063
+Energy for replicate  14 =      -12.5967
+Energy for replicate  15 =      -18.3995
+Energy for replicate  16 =      -18.6861
+Energy for replicate  17 =      -16.1080
+Energy for replicate  18 =      -12.4138
+Energy for replicate  19 =      -12.9080
+Energy for replicate  20 =      -17.5748
+Energy for replicate  21 =       -9.5388
+Energy for replicate  22 =      -12.6359
+Energy for replicate  23 =      -14.2503
+Energy for replicate  24 =      -12.4670
+Energy for replicate  25 =      -19.3748
+Energy for replicate  26 =      -13.3201
+Energy for replicate  27 =      -16.8487
+Energy for replicate  28 =      -11.3324
+Energy for replicate  29 =      -13.6154
+Energy for replicate  30 =      -13.5439
+Energy for replicate  31 =      -15.6335
+Energy for replicate  32 =      -34.1978
+Total Energy of replicates =     -540.5514
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+ NSTEP =    37500   TIME(PS) =      18.750  TEMP(K) =   339.88  PRESS =     0.0
+ Etot   =         4.0169  EKtot   =        22.2884  EPtot      =       -18.2715
+ BOND   =         6.0469  ANGLE   =         9.4297  DIHED      =        10.3993
+ 1-4 NB =         3.3340  1-4 EEL =        48.2389  VDWAALS    =        -1.8124
+ EELEC  =       -76.5668  EGB     =       -17.3412  RESTRAINT  =         0.0000
+NEB replicate breakdown:
+Energy for replicate   1 =      -36.0245
+Energy for replicate   2 =      -14.0980
+Energy for replicate   3 =      -18.2715
+Energy for replicate   4 =      -15.9406
+Energy for replicate   5 =      -17.5742
+Energy for replicate   6 =      -18.5667
+Energy for replicate   7 =      -19.8119
+Energy for replicate   8 =      -24.6983
+Energy for replicate   9 =      -12.6315
+Energy for replicate  10 =      -17.0081
+Energy for replicate  11 =      -18.7582
+Energy for replicate  12 =      -19.3541
+Energy for replicate  13 =      -17.3798
+Energy for replicate  14 =      -17.5393
+Energy for replicate  15 =      -22.5009
+Energy for replicate  16 =      -14.3221
+Energy for replicate  17 =      -18.5000
+Energy for replicate  18 =      -16.9632
+Energy for replicate  19 =      -18.1460
+Energy for replicate  20 =      -14.6384
+Energy for replicate  21 =      -20.3748
+Energy for replicate  22 =      -16.0257
+Energy for replicate  23 =      -17.9577
+Energy for replicate  24 =      -16.8337
+Energy for replicate  25 =      -16.2909
+Energy for replicate  26 =       -8.9603
+Energy for replicate  27 =      -15.8419
+Energy for replicate  28 =      -20.1695
+Energy for replicate  29 =      -12.0179
+Energy for replicate  30 =      -17.2526
+Energy for replicate  31 =      -18.3746
+Energy for replicate  32 =      -34.1978
+Total Energy of replicates =     -587.0247
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+ NSTEP =    38000   TIME(PS) =      19.000  TEMP(K) =   259.52  PRESS =     0.0
+ Etot   =        -3.5998  EKtot   =        17.0183  EPtot      =       -20.6181
+ BOND   =         7.7035  ANGLE   =         6.6804  DIHED      =        11.2215
+ 1-4 NB =         2.5954  1-4 EEL =        46.4651  VDWAALS    =        -1.7586
+ EELEC  =       -75.3555  EGB     =       -18.1699  RESTRAINT  =         0.0000
+NEB replicate breakdown:
+Energy for replicate   1 =      -36.0245
+Energy for replicate   2 =      -12.2479
+Energy for replicate   3 =      -20.6181
+Energy for replicate   4 =      -15.7750
+Energy for replicate   5 =      -17.7885
+Energy for replicate   6 =      -17.9475
+Energy for replicate   7 =      -18.9182
+Energy for replicate   8 =      -18.8202
+Energy for replicate   9 =      -17.0944
+Energy for replicate  10 =      -18.9971
+Energy for replicate  11 =      -21.7115
+Energy for replicate  12 =      -20.9271
+Energy for replicate  13 =      -21.3039
+Energy for replicate  14 =      -16.8368
+Energy for replicate  15 =      -14.9642
+Energy for replicate  16 =      -10.9955
+Energy for replicate  17 =      -10.5508
+Energy for replicate  18 =      -14.3707
+Energy for replicate  19 =      -20.7912
+Energy for replicate  20 =      -14.3005
+Energy for replicate  21 =      -16.5282
+Energy for replicate  22 =      -11.4126
+Energy for replicate  23 =      -14.8723
+Energy for replicate  24 =      -14.2844
+Energy for replicate  25 =       -6.5304
+Energy for replicate  26 =      -20.1642
+Energy for replicate  27 =      -17.2061
+Energy for replicate  28 =      -19.9752
+Energy for replicate  29 =      -14.6428
+Energy for replicate  30 =      -19.8097
+Energy for replicate  31 =      -11.3350
+Energy for replicate  32 =      -34.1978
+Total Energy of replicates =     -561.9424
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+ NSTEP =    38500   TIME(PS) =      19.250  TEMP(K) =   266.18  PRESS =     0.0
+ Etot   =        -0.1886  EKtot   =        17.4556  EPtot      =       -17.6442
+ BOND   =         5.9202  ANGLE   =        10.1751  DIHED      =        14.2704
+ 1-4 NB =         2.0172  1-4 EEL =        43.6104  VDWAALS    =        -2.0279
+ EELEC  =       -73.3170  EGB     =       -18.2926  RESTRAINT  =         0.0000
+NEB replicate breakdown:
+Energy for replicate   1 =      -36.0245
+Energy for replicate   2 =      -14.2310
+Energy for replicate   3 =      -17.6442
+Energy for replicate   4 =      -14.1232
+Energy for replicate   5 =      -18.2069
+Energy for replicate   6 =      -16.8798
+Energy for replicate   7 =      -19.2902
+Energy for replicate   8 =      -17.3124
+Energy for replicate   9 =      -11.2641
+Energy for replicate  10 =      -13.1934
+Energy for replicate  11 =      -17.7800
+Energy for replicate  12 =      -11.3232
+Energy for replicate  13 =      -14.6839
+Energy for replicate  14 =      -19.0076
+Energy for replicate  15 =      -18.9378
+Energy for replicate  16 =      -18.1611
+Energy for replicate  17 =      -13.6475
+Energy for replicate  18 =      -16.5136
+Energy for replicate  19 =      -21.3335
+Energy for replicate  20 =      -18.8451
+Energy for replicate  21 =      -17.2015
+Energy for replicate  22 =       -6.6715
+Energy for replicate  23 =      -14.2700
+Energy for replicate  24 =      -16.4103
+Energy for replicate  25 =      -13.8180
+Energy for replicate  26 =      -10.0233
+Energy for replicate  27 =      -16.4898
+Energy for replicate  28 =      -13.8912
+Energy for replicate  29 =      -21.2512
+Energy for replicate  30 =       -6.9854
+Energy for replicate  31 =      -10.2441
+Energy for replicate  32 =      -34.1978
+Total Energy of replicates =     -529.8572
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+ NSTEP =    39000   TIME(PS) =      19.500  TEMP(K) =   347.70  PRESS =     0.0
+ Etot   =         6.3640  EKtot   =        22.8013  EPtot      =       -16.4373
+ BOND   =         8.0284  ANGLE   =        12.2775  DIHED      =        10.8690
+ 1-4 NB =         2.2167  1-4 EEL =        43.8067  VDWAALS    =        -1.5829
+ EELEC  =       -74.6695  EGB     =       -17.3831  RESTRAINT  =         0.0000
+NEB replicate breakdown:
+Energy for replicate   1 =      -36.0245
+Energy for replicate   2 =      -19.9143
+Energy for replicate   3 =      -16.4373
+Energy for replicate   4 =      -14.2768
+Energy for replicate   5 =      -18.2711
+Energy for replicate   6 =      -16.9820
+Energy for replicate   7 =      -21.5113
+Energy for replicate   8 =      -24.2826
+Energy for replicate   9 =      -18.7188
+Energy for replicate  10 =      -22.4943
+Energy for replicate  11 =      -19.8822
+Energy for replicate  12 =      -20.5227
+Energy for replicate  13 =      -24.2660
+Energy for replicate  14 =      -17.8579
+Energy for replicate  15 =      -18.8495
+Energy for replicate  16 =      -15.7107
+Energy for replicate  17 =      -10.1716
+Energy for replicate  18 =      -22.1495
+Energy for replicate  19 =       -9.4251
+Energy for replicate  20 =      -14.7831
+Energy for replicate  21 =      -19.7539
+Energy for replicate  22 =      -14.0410
+Energy for replicate  23 =      -13.2346
+Energy for replicate  24 =      -23.0146
+Energy for replicate  25 =      -13.9530
+Energy for replicate  26 =      -11.6944
+Energy for replicate  27 =      -20.0217
+Energy for replicate  28 =      -20.6058
+Energy for replicate  29 =      -16.7510
+Energy for replicate  30 =      -13.8244
+Energy for replicate  31 =      -13.2894
+Energy for replicate  32 =      -34.1978
+Total Energy of replicates =     -596.9126
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+ NSTEP =    39500   TIME(PS) =      19.750  TEMP(K) =   323.67  PRESS =     0.0
+ Etot   =         7.2795  EKtot   =        21.2256  EPtot      =       -13.9461
+ BOND   =         8.8372  ANGLE   =        12.3626  DIHED      =        11.3767
+ 1-4 NB =         2.8305  1-4 EEL =        42.7892  VDWAALS    =        -1.0679
+ EELEC  =       -73.5628  EGB     =       -17.5116  RESTRAINT  =         0.0000
+NEB replicate breakdown:
+Energy for replicate   1 =      -36.0245
+Energy for replicate   2 =      -13.3472
+Energy for replicate   3 =      -13.9461
+Energy for replicate   4 =      -20.6832
+Energy for replicate   5 =      -21.6033
+Energy for replicate   6 =      -18.8910
+Energy for replicate   7 =      -20.5361
+Energy for replicate   8 =      -19.5841
+Energy for replicate   9 =      -18.0220
+Energy for replicate  10 =      -22.6823
+Energy for replicate  11 =      -16.5173
+Energy for replicate  12 =      -17.4205
+Energy for replicate  13 =      -16.8321
+Energy for replicate  14 =      -19.9038
+Energy for replicate  15 =      -14.7629
+Energy for replicate  16 =      -18.2239
+Energy for replicate  17 =       -9.8909
+Energy for replicate  18 =      -20.3305
+Energy for replicate  19 =      -20.3447
+Energy for replicate  20 =      -12.0155
+Energy for replicate  21 =      -15.2828
+Energy for replicate  22 =      -14.1625
+Energy for replicate  23 =      -20.4453
+Energy for replicate  24 =      -21.4345
+Energy for replicate  25 =      -21.0259
+Energy for replicate  26 =      -18.6756
+Energy for replicate  27 =      -11.1515
+Energy for replicate  28 =      -16.1656
+Energy for replicate  29 =      -14.3580
+Energy for replicate  30 =      -19.7035
+Energy for replicate  31 =      -15.2212
+Energy for replicate  32 =      -34.1978
+Total Energy of replicates =     -593.3864
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+ NSTEP =    40000   TIME(PS) =      20.000  TEMP(K) =   281.89  PRESS =     0.0
+ Etot   =         0.4061  EKtot   =        18.4855  EPtot      =       -18.0794
+ BOND   =         6.8199  ANGLE   =        11.0085  DIHED      =        10.4732
+ 1-4 NB =         2.3921  1-4 EEL =        44.1529  VDWAALS    =        -1.2776
+ EELEC  =       -73.9024  EGB     =       -17.7460  RESTRAINT  =         0.0000
+NEB replicate breakdown:
+Energy for replicate   1 =      -36.0245
+Energy for replicate   2 =      -14.8407
+Energy for replicate   3 =      -18.0794
+Energy for replicate   4 =       -9.3999
+Energy for replicate   5 =      -19.3032
+Energy for replicate   6 =      -14.1457
+Energy for replicate   7 =      -21.1136
+Energy for replicate   8 =      -22.4715
+Energy for replicate   9 =      -13.4690
+Energy for replicate  10 =      -20.3729
+Energy for replicate  11 =      -16.3742
+Energy for replicate  12 =      -17.4215
+Energy for replicate  13 =      -17.8622
+Energy for replicate  14 =      -15.5087
+Energy for replicate  15 =      -18.0807
+Energy for replicate  16 =      -13.6154
+Energy for replicate  17 =      -13.5280
+Energy for replicate  18 =      -14.0544
+Energy for replicate  19 =      -19.1694
+Energy for replicate  20 =      -13.0253
+Energy for replicate  21 =      -17.8844
+Energy for replicate  22 =      -12.7118
+Energy for replicate  23 =      -16.7158
+Energy for replicate  24 =      -15.2372
+Energy for replicate  25 =      -19.2442
+Energy for replicate  26 =      -18.2788
+Energy for replicate  27 =      -12.5384
+Energy for replicate  28 =       -6.1787
+Energy for replicate  29 =      -21.7989
+Energy for replicate  30 =      -19.6692
+Energy for replicate  31 =      -11.9919
+Energy for replicate  32 =      -34.1978
+Total Energy of replicates =     -554.3073
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+      A V E R A G E S   O V E R   40000 S T E P S
+
+
+ NSTEP =    40000   TIME(PS) =      20.000  TEMP(K) =   168.81  PRESS =     0.0
+ Etot   =       -14.8044  EKtot   =        11.0698  EPtot      =       -25.8742
+ BOND   =         4.1182  ANGLE   =         6.0029  DIHED      =        10.5158
+ 1-4 NB =         3.0620  1-4 EEL =        44.9494  VDWAALS    =        -1.5789
+ EELEC  =       -75.2437  EGB     =       -17.7000  RESTRAINT  =         0.0000
+NEB replicate breakdown:
+Energy for replicate   1 =      -36.0245
+Energy for replicate   2 =      -14.8407
+Energy for replicate   3 =      -18.0794
+Energy for replicate   4 =       -9.3999
+Energy for replicate   5 =      -19.3032
+Energy for replicate   6 =      -14.1457
+Energy for replicate   7 =      -21.1136
+Energy for replicate   8 =      -22.4715
+Energy for replicate   9 =      -13.4690
+Energy for replicate  10 =      -20.3729
+Energy for replicate  11 =      -16.3742
+Energy for replicate  12 =      -17.4215
+Energy for replicate  13 =      -17.8622
+Energy for replicate  14 =      -15.5087
+Energy for replicate  15 =      -18.0807
+Energy for replicate  16 =      -13.6154
+Energy for replicate  17 =      -13.5280
+Energy for replicate  18 =      -14.0544
+Energy for replicate  19 =      -19.1694
+Energy for replicate  20 =      -13.0253
+Energy for replicate  21 =      -17.8844
+Energy for replicate  22 =      -12.7118
+Energy for replicate  23 =      -16.7158
+Energy for replicate  24 =      -15.2372
+Energy for replicate  25 =      -19.2442
+Energy for replicate  26 =      -18.2788
+Energy for replicate  27 =      -12.5384
+Energy for replicate  28 =       -6.1787
+Energy for replicate  29 =      -21.7989
+Energy for replicate  30 =      -19.6692
+Energy for replicate  31 =      -11.9919
+Energy for replicate  32 =      -34.1978
+Total Energy of replicates =     -554.3073
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+      R M S  F L U C T U A T I O N S
+
+
+ NSTEP =    40000   TIME(PS) =      20.000  TEMP(K) =   100.88  PRESS =     0.0
+ Etot   =        12.5804  EKtot   =         6.6157  EPtot      =         6.3315
+ BOND   =         2.4193  ANGLE   =         3.0927  DIHED      =         1.2069
+ 1-4 NB =         0.5980  1-4 EEL =         1.3253  VDWAALS    =         0.5834
+ EELEC  =         1.2751  EGB     =         0.5426  RESTRAINT  =         0.0000
+NEB replicate breakdown:
+Energy for replicate   1 =      -36.0245
+Energy for replicate   2 =      -14.8407
+Energy for replicate   3 =      -18.0794
+Energy for replicate   4 =       -9.3999
+Energy for replicate   5 =      -19.3032
+Energy for replicate   6 =      -14.1457
+Energy for replicate   7 =      -21.1136
+Energy for replicate   8 =      -22.4715
+Energy for replicate   9 =      -13.4690
+Energy for replicate  10 =      -20.3729
+Energy for replicate  11 =      -16.3742
+Energy for replicate  12 =      -17.4215
+Energy for replicate  13 =      -17.8622
+Energy for replicate  14 =      -15.5087
+Energy for replicate  15 =      -18.0807
+Energy for replicate  16 =      -13.6154
+Energy for replicate  17 =      -13.5280
+Energy for replicate  18 =      -14.0544
+Energy for replicate  19 =      -19.1694
+Energy for replicate  20 =      -13.0253
+Energy for replicate  21 =      -17.8844
+Energy for replicate  22 =      -12.7118
+Energy for replicate  23 =      -16.7158
+Energy for replicate  24 =      -15.2372
+Energy for replicate  25 =      -19.2442
+Energy for replicate  26 =      -18.2788
+Energy for replicate  27 =      -12.5384
+Energy for replicate  28 =       -6.1787
+Energy for replicate  29 =      -21.7989
+Energy for replicate  30 =      -19.6692
+Energy for replicate  31 =      -11.9919
+Energy for replicate  32 =      -34.1978
+Total Energy of replicates =     -554.3073
+ ------------------------------------------------------------------------------
+
+
+ NMR restraints on final step:
+
+
+--------------------------------------------------------------------------------
+   5.  TIMINGS
+--------------------------------------------------------------------------------
+
+|                Calc gb radii              1.45 (26.84% of Gen B)
+|                Communicate gb radii       0.01 ( 0.20% of Gen B)
+|                Calc gb diag               1.89 (35.05% of Gen B)
+|                Calc gb off-diag           2.00 (37.09% of Gen B)
+|                Other                      0.04 ( 0.83% of Gen B)
+|             Gen Born time              5.39 (100.0% of Nonbo)
+|             IPS excludes               0.00 ( 0.08% of Nonbo)
+|          Nonbond force              5.40 ( 0.62% of Force)
+|          Bond/Angle/Dihedral        1.07 ( 0.12% of Force)
+|          Other                    861.45 (99.25% of Force)
+|       Force time               867.93 (99.62% of Runmd)
+|       Verlet update time         3.23 ( 0.37% of Runmd)
+|       Other                      0.11 ( 0.01% of Runmd)
+|    Runmd Time               871.27 (100.0% of Total)
+| Total time               871.31 (100.0% of ALL  )
+
+| Highest rstack allocated:          0
+| Highest istack allocated:          0
+
+| Final Performance Info:
+| -----------------------------------------------------
+| Average timings for all steps:
+|     Elapsed(s) =     871.27 Per Step(ms) =      21.78
+|         ns/day =       1.98   seconds/ns =   43563.39
+| -----------------------------------------------------
+
+|           Job began  at 16:54:16.583  on 07/24/2018
+|           Setup done at 16:54:16.628  on 07/24/2018
+|           Run   done at 17:08:47.894  on 07/24/2018
+|     wallclock() was called 1240117 times

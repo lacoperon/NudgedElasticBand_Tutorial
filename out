@@ -1,0 +1,53 @@
+Sender: OpenLava System <openlava@n34>
+Subject: Job 934133: <GPU_NudgedElasticBand_Example> Done
+
+Job <GPU_NudgedElasticBand_Example> was submitted from host <cottontail> by user <ejwilliams>.
+Job was executed on host(s) <4*n34>, in queue <mwgpu>, as user <ejwilliams>.
+</home33/ejwilliams> was used as the home directory.
+</home33/ejwilliams/NEB_Tutorial/Implementation> was used as the working directory.
+Started at Tue Jul 24 17:20:45 2018
+Results reported at Tue Jul 24 17:56:58 2018
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/bash 
+#####PTT INITIALIZATION VARIABLES### 
+#BSUB -q mwgpu 
+#BSUB -n 4 
+#BSUB -J GPU_NudgedElasticBand_Example
+#BSUB -o out 
+#BSUB -e err
+
+
+cd 2EQUIL/
+mpirun -np 32 $AMBERHOME/bin/sander.MPI -ng 32 -groupfile groupfile 
+
+
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time   :  64228.48 sec.
+    Max Memory :       941 MB
+    Max Swap   :     11225 MB
+
+    Max Processes  :        36
+
+The output (if any) follows:
+
+
+ Running multisander version of sander Amber12
+    Total processors =    32
+    Number of groups =    32
+ 
+
+
+PS:
+
+Read file <err> for stderr output of this job.
+
