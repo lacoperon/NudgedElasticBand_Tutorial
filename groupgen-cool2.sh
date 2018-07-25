@@ -9,7 +9,7 @@ fi
 
 for ((i=0; i <=31; i++)) ; do
   ext=`printf "%03i" $i`
-  echo -O -p ../str1.prmtop -c ../4COOL1/neb.r.$ext -i ./5cool2.in -x ./neb.x.$ext -o ./neb.out.$ext \
+  echo -O -p ../ALA_dipeptide.prmtop -c ../4COOL1/neb.r.$ext -i ./5cool2.in -x ./neb.x.$ext -o ./neb.out.$ext \
   -inf ./neb.info.$ext -r ./neb.r.$ext >> groupfile
 
 done
